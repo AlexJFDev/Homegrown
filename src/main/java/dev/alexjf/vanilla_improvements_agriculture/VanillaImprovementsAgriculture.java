@@ -16,7 +16,7 @@ public class VanillaImprovementsAgriculture implements ModInitializer {
 	//variables
 	static String modid = "vanilla_improvements_agriculture";
 	//blocks
-	public static final PostBlock POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(.5f));
+	public static final PostBlock POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f));
 	//items
 	//nothing rn
 	//other stuff
