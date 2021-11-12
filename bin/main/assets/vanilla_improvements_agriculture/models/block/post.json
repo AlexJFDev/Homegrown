@@ -1,0 +1,8 @@
+{
+    "parent": "vanilla_improvements_agriculture:block/template_post",
+    "textures": {
+      "side": "vanilla_improvements_agriculture:block/oak_post",
+      "top": "vanilla_improvements_agriculture:block/oak_post_top"
+    }
+  }
+

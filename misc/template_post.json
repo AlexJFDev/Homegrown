@@ -1,0 +1,21 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "#oak_post"
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 4, 0, 4 ],
+            "to": [ 12, 16, 12 ],
+            "faces": {
+                "north": { "texture": "#oak_post", "uv": [ 0, 0, 4, 16 ] },
+                "east": { "texture": "#oak_post", "uv": [ 0, 0, 4, 16 ] },
+                "south": { "texture": "#oak_post", "uv": [ 0, 0, 4, 16 ] },
+                "west": { "texture": "#oak_post", "uv": [ 0, 0, 4, 16 ] },
+                "up": { "texture": "#oak_post_top", "uv": [ 0, 0, 4, 4 ] },
+                "down": { "texture": "#oak_post_top", "uv": [ 0, 0, 4, 4 ] }
+            }
+        }
+    ]
+}

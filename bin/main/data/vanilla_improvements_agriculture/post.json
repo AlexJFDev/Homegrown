@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "l",
+      "l",
+      "l"
+    ],
+    "key": {
+      "l": {
+        "item": "minecraft:oak_log"
+      }
+    },
+    "result": {
+      "item": "vanilla_improvements_agriculture:post",
+      "count": 4
+    }
+  }
+

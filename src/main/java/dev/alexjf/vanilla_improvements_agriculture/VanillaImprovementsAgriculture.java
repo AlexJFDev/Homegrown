@@ -13,16 +13,26 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class VanillaImprovementsAgriculture implements ModInitializer {
+	//variables
 	static String modid = "vanilla_improvements_agriculture";
-	
-	public static final Logger LOGGER = LogManager.getLogger(modid);
+	//blocks
 	public static final PostBlock POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(.5f));
-	
+	//items
+	//nothing rn
+	//other stuff
+	public static final Logger LOGGER = LogManager.getLogger(modid);
+
 	@Override
 	public void onInitialize() {
+		//register blocks
 		Registry.register(Registry.BLOCK, new Identifier(modid, "post"), POST);
+		LOGGER.info("Finished block registry");
+		//register block items
 		Registry.register(Registry.ITEM, new Identifier(modid, "post"), new BlockItem(POST, new FabricItemSettings().group(ItemGroup.MISC)));
-
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Finished block item registry");
+		//register items
+		LOGGER.info("Finished item registry");
+		//other stuff
+		LOGGER.info("Finished Initializing VIA");
 	}
 }
