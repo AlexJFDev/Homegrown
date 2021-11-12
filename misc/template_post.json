@@ -6,8 +6,8 @@
     "elements": [
         {
             "name": "Cube",
-            "from": [ 4, 0, 4 ],
-            "to": [ 12, 16, 12 ],
+            "from": [ 6, 0, 6 ],
+            "to": [ 10, 16, 10 ],
             "faces": {
                 "north": { "texture": "#oak_post", "uv": [ 0, 0, 4, 16 ] },
                 "east": { "texture": "#oak_post", "uv": [ 0, 0, 4, 16 ] },
