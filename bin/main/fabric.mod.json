@@ -22,6 +22,9 @@
   "entrypoints": {
     "main": [
       "dev.alexjf.vanilla_improvements_agriculture.VanillaImprovementsAgriculture"
+    ],
+    "client": [
+      "dev.alexjf.vanilla_improvements_agriculture.VanillaImprovementsAgricultureClient"
     ]
   },
   "mixins": [
