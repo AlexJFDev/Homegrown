@@ -1,7 +1,7 @@
 {
     "variants": {
       "age=0": {
-        "model": "vanilla_improvements_agriculture:block/barley_stage0"
+        "model": "minecraft:block/wheat_stage0"
       },
       "age=1": {
         "model": "minecraft:block/wheat_stage1"
