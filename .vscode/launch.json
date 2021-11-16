@@ -9,7 +9,7 @@
       "console": "internalConsole",
       "stopOnEntry": false,
       "mainClass": "net.fabricmc.devlaunchinjector.Main",
-      "vmArgs": "-XX:+ShowCodeDetailsInExceptionMessages -Dfabric.dli.config\u003dE:\\minecraft_moding\\Vanilla-Improvements-Agriculutre\\.gradle\\loom-cache\\launch.cfg -Dfabric.dli.env\u003dclient -Dfabric.dli.main\u003dnet.fabricmc.loader.launch.knot.KnotClient",
+      "vmArgs": "-XX:+ShowCodeDetailsInExceptionMessages -Dfabric.dli.config\u003dE:\\minecraft_moding\\Vanilla-Improvements-Agriculutre\\.gradle\\loom-cache\\launch.cfg -Dfabric.dli.env\u003dclient -Dfabric.dli.main\u003dnet.fabricmc.loader.launch.knot.KnotClient -Dmixin.debug.export=true",
       "args": ""
     },
     {

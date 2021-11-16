@@ -28,7 +28,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "vanilla_improvements_agriculture.mixins.json"
   ],
 
   "depends": {
