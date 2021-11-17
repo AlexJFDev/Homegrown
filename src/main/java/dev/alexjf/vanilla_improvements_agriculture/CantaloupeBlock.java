@@ -18,4 +18,3 @@ public class CantaloupeBlock extends GourdBlock {
 		return (AttachedStemBlock)VanillaImprovementsAgriculture.ATTACHED_CANTALOUPE_STEM;
 	}
 }
-
