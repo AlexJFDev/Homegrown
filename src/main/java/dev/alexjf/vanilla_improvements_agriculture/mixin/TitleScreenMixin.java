@@ -1,4 +1,5 @@
 package dev.alexjf.vanilla_improvements_agriculture.mixin;
+
 import net.minecraft.client.gui.screen.TitleScreen;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class TitleScreenMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		System.out.println("This line is printed by title screen mixin!");
+		System.out.println("If you see this line remove this file from the mixins.json");
 	}
 }

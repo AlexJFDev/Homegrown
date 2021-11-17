@@ -4,8 +4,7 @@
   "package": "dev.alexjf.vanilla_improvements_agriculture.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "FarmlandBlockMixin",
-    "TitleScreenMixin"
+    "FarmlandBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
