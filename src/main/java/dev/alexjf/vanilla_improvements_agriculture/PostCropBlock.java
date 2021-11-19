@@ -1,12 +1,10 @@
 package dev.alexjf.vanilla_improvements_agriculture;
 
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.block.FarmlandBlock;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
 import net.minecraft.block.ShapeContext;
 
 import java.util.Random;
@@ -28,14 +26,13 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-public class PostCropBlock extends PlantBlock implements Fertilizable {
+public class PostCropBlock extends CropBlock {
 	public static final int MAX_AGE = 7;
 	public static final IntProperty AGE;
 	private static final VoxelShape[] AGE_TO_SHAPE;
 
-	protected PostCropBlock(AbstractBlock.Settings settings) {
+	protected PostCropBlock(Settings settings) {
 		super(settings);
-		this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(this.getAgeProperty(), 0));
 	}
 
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

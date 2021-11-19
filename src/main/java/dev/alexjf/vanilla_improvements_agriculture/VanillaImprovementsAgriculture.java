@@ -52,7 +52,7 @@ public class VanillaImprovementsAgriculture implements ModInitializer {
 	public static final Item ROTTEN_TOMATO = new Item(new FabricItemSettings().group(VanillaImprovementsAgriculture.ITEM_GROUP));
 	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().group(VanillaImprovementsAgriculture.ITEM_GROUP));
 	public static final Item RED_TOMATO = new Item(new FabricItemSettings().group(VanillaImprovementsAgriculture.ITEM_GROUP));
-	public static final PostCropSeeds TOMATO_SEEDS = new PostCropSeeds(VanillaImprovementsAgriculture.TOMATO_CROP, new Item.Settings().group(VanillaImprovementsAgriculture.ITEM_GROUP));
+	public static final Item TOMATO_SEEDS = new PostCropSeeds(VanillaImprovementsAgriculture.TOMATO_CROP, new Item.Settings().group(VanillaImprovementsAgriculture.ITEM_GROUP));
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().group(VanillaImprovementsAgriculture.ITEM_GROUP));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(VanillaImprovementsAgriculture.CANTALOUPE_STEM, new Item.Settings().group(VanillaImprovementsAgriculture.ITEM_GROUP).food(FoodComponents.MELON_SLICE));
 	
