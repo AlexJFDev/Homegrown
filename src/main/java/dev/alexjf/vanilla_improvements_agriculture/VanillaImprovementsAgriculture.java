@@ -19,13 +19,15 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class VanillaImprovementsAgriculture implements ModInitializer {
 	//variables
 	static String modid = "vanilla_improvements_agriculture";
-
+	//Blockstate Types
+	public static final EnumProperty<PostType> POST_TYPE = EnumProperty.of("type", PostType.class);
 	//item groups
 	public static final ItemGroup BLOCK_GROUP = FabricItemGroupBuilder.build(
 		new Identifier(modid, "blocks"),
