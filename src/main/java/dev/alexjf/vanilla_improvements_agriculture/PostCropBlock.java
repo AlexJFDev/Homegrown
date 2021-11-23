@@ -10,6 +10,7 @@ import net.minecraft.block.ShapeContext;
 import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.RavagerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -25,6 +26,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.event.GameEvent;
 
 public class PostCropBlock extends CropBlock {
 	public static final int MAX_AGE = 7;
@@ -33,6 +35,14 @@ public class PostCropBlock extends CropBlock {
 
 	protected PostCropBlock(Settings settings) {
 		super(settings);
+	}
+
+	@Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+		System.out.println("BROKEN");
+		super.spawnBreakParticles(world, player, pos, state);
+		//world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+        world.setBlockState(pos, Blocks.STONE.getDefaultState(), 3);
 	}
 
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
