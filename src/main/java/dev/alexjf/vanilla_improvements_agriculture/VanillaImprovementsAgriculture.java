@@ -26,7 +26,7 @@ import net.minecraft.util.registry.Registry;
 public class VanillaImprovementsAgriculture implements ModInitializer {
 	//variables
 	static String modid = "vanilla_improvements_agriculture";
-	//Blockstate Types
+	//blockstate enums
 	public static final EnumProperty<PostType> POST_TYPE = EnumProperty.of("type", PostType.class);
 	//item groups
 	public static final ItemGroup BLOCK_GROUP = FabricItemGroupBuilder.build(
@@ -38,8 +38,13 @@ public class VanillaImprovementsAgriculture implements ModInitializer {
 
 	//blocks
 	public static final Block OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+
 	public static final Block BARLEY_CROP = new Crop(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-	public static final PostCropBlock TOMATO_CROP = new PostCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final PostCropBlock TOMATO_CROP = new PostCropBlock(VanillaImprovementsAgriculture.TOMATO_SEEDS, AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
 	public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedCantaloupeStem((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return VanillaImprovementsAgriculture.CANTALOUPE_SEEDS;
@@ -63,7 +68,12 @@ public class VanillaImprovementsAgriculture implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		//register blocks
+		Registry.register(Registry.BLOCK, new Identifier(modid,"oak_planks_post"), OAK_PLANKS_POST);
 		Registry.register(Registry.BLOCK, new Identifier(modid,"oak_log_post"), OAK_LOG_POST);
+		Registry.register(Registry.BLOCK, new Identifier(modid,"stripped_oak_log_post"), STRIPPED_OAK_LOG_POST);
+		Registry.register(Registry.BLOCK, new Identifier(modid,"oak_wood_post"), OAK_WOOD_POST);
+		Registry.register(Registry.BLOCK, new Identifier(modid,"stripped_oak_wood_post"), STRIPPED_OAK_WOOD_POST);
+
 		Registry.register(Registry.BLOCK, new Identifier(modid,"barley"), BARLEY_CROP);
 		Registry.register(Registry.BLOCK, new Identifier(modid,"tomato"), TOMATO_CROP);
 		Registry.register(Registry.BLOCK, new Identifier(modid,"cantaloupe_block"), CANTALOUPE_BLOCK);
@@ -73,6 +83,11 @@ public class VanillaImprovementsAgriculture implements ModInitializer {
 		
 		//register block items
 		Registry.register(Registry.ITEM, new Identifier(modid, "oak_log_post"), new BlockItem(OAK_LOG_POST, new FabricItemSettings().group(VanillaImprovementsAgriculture.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(modid, "stripped_oak_log_post"), new BlockItem(STRIPPED_OAK_LOG_POST, new FabricItemSettings().group(VanillaImprovementsAgriculture.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(modid, "oak_wood_post"), new BlockItem(OAK_WOOD_POST, new FabricItemSettings().group(VanillaImprovementsAgriculture.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(modid, "stripped_oak_wood_post"), new BlockItem(STRIPPED_OAK_WOOD_POST, new FabricItemSettings().group(VanillaImprovementsAgriculture.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(modid, "oak_planks_post"), new BlockItem(OAK_PLANKS_POST, new FabricItemSettings().group(VanillaImprovementsAgriculture.BLOCK_GROUP)));
+		
 		Registry.register(Registry.ITEM, new Identifier(modid, "cantaloupe_block"), new BlockItem(CANTALOUPE_BLOCK, new FabricItemSettings().group(VanillaImprovementsAgriculture.BLOCK_GROUP)));
 		LOGGER.info("Finished block item registry");
 		

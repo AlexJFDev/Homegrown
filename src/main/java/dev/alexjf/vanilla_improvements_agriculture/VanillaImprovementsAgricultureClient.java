@@ -13,6 +13,7 @@ public class VanillaImprovementsAgricultureClient implements ClientModInitialize
 		BlockRenderLayerMap.INSTANCE.putBlock(VanillaImprovementsAgriculture.BARLEY_CROP, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(VanillaImprovementsAgriculture.ATTACHED_CANTALOUPE_STEM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(VanillaImprovementsAgriculture.CANTALOUPE_STEM, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VanillaImprovementsAgriculture.TOMATO_CROP, RenderLayer.getCutout());
 
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
 			int i = (Integer)state.get(StemBlock.AGE);

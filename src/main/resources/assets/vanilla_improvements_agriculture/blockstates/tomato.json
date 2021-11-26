@@ -1,28 +1,108 @@
 {
-  "variants": {
-    "age=0": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage0"
+  "multipart": [
+    {
+      "when": {
+        "age": 0
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage0"
+      }
     },
-    "age=1": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage1"
+    {
+      "when": {
+        "age": 1
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage1"
+      }
     },
-    "age=2": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage2"
+    {
+      "when": {
+        "age": 2
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage2"
+      }
     },
-    "age=3": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage3"
+    {
+      "when": {
+        "age": 3
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage3"
+      }
     },
-    "age=4": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage4"
+    {
+      "when": {
+        "age": 4
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage4"
+      }
     },
-    "age=5": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage5"
+    {
+      "when": {
+        "age": 5
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage5"
+      }
     },
-    "age=6": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage6"
+    {
+      "when": {
+        "age": 6
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage6"
+      }
     },
-    "age=7": {
-      "model": "vanilla_improvements_agriculture:block/tomato_stage7"
+    {
+      "when": {
+        "age": 7
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/tomato_stage7"
+      }
+    },
+    {
+      "when": {
+        "type": "oak_log_post"
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/oak_log_post"
+      }
+    },
+    {
+      "when": {
+        "type": "oak_planks_post"
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/oak_planks_post"
+      }
+    },
+    {
+      "when": {
+        "type": "oak_wood_post"
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/oak_wood_post"
+      }
+    },
+    {
+      "when": {
+        "type": "stripped_oak_log_post"
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/stripped_oak_log_post"
+      }
+    },
+    {
+      "when": {
+        "type": "stripped_oak_wood_post"
+      },
+      "apply": {
+        "model": "vanilla_improvements_agriculture:block/stripped_oak_wood_post"
+      }
     }
-  }
+  ]
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "vanilla_improvements_agriculture:block/template_post",
+  "textures": {
+    "side": "minecraft:block/oak_planks",
+    "top": "minecraft:block/oak_planks"
+  }
+}
