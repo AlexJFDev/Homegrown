@@ -1,8 +1,9 @@
-package dev.alexjf.vanilla_improvements_agriculture;
+package dev.alexjf.vanilla_improvements_agriculture.block;
 
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-
+import dev.alexjf.vanilla_improvements_agriculture.block.enums.PostType;
+import dev.alexjf.vanilla_improvements_agriculture.item.PostCropSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

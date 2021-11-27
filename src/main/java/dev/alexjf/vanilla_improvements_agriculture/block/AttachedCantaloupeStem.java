@@ -1,4 +1,4 @@
-package dev.alexjf.vanilla_improvements_agriculture;
+package dev.alexjf.vanilla_improvements_agriculture.block;
 
 import java.util.function.Supplier;
 
