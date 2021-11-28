@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import dev.alexjf.vanilla_improvements_agriculture.PostBlock;
+import dev.alexjf.vanilla_improvements_agriculture.block.PostBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.util.math.BlockPos;

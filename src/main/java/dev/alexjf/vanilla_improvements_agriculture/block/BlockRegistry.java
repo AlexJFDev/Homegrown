@@ -1,6 +1,6 @@
 package dev.alexjf.vanilla_improvements_agriculture.block;
 
-import dev.alexjf.vanilla_improvements_agriculture.VanillaImprovementsAgriculture;
+import dev.alexjf.vanilla_improvements_agriculture.item.ItemRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -23,10 +23,10 @@ public class BlockRegistry {
 	public static final PostCropBlock TOMATO_CROP = new PostCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedCantaloupeStem((GourdBlock)CANTALOUPE_BLOCK, () -> {
-		return VanillaImprovementsAgriculture.CANTALOUPE_SEEDS;
+		return ItemRegistry.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD));
 	public static final Block CANTALOUPE_STEM = new CantaloupeStem((GourdBlock)CANTALOUPE_BLOCK, () -> {
-		return VanillaImprovementsAgriculture.CANTALOUPE_SEEDS;
+		return ItemRegistry.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
 	
 
@@ -39,7 +39,7 @@ public class BlockRegistry {
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"barley"), BARLEY_CROP);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"tomato"), TOMATO_CROP);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_block"), CANTALOUPE_BLOCK);
-		//Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);
-		//Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_stem"), CANTALOUPE_STEM);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_stem"), CANTALOUPE_STEM);
     }
 }
