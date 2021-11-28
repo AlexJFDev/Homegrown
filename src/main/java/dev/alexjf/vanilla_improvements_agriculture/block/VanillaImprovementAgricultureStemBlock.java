@@ -6,9 +6,9 @@ import net.minecraft.block.GourdBlock;
 import net.minecraft.block.StemBlock;
 import net.minecraft.item.Item;
 
-public class CantaloupeStem extends StemBlock{
+public class VanillaImprovementAgricultureStemBlock extends StemBlock{
 
-    protected CantaloupeStem(GourdBlock gourdBlock, Supplier<Item> pickBlockItem, Settings settings) {
+    protected VanillaImprovementAgricultureStemBlock(GourdBlock gourdBlock, Supplier<Item> pickBlockItem, Settings settings) {
         super(gourdBlock, pickBlockItem, settings);
     }
     

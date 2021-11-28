@@ -3,7 +3,7 @@ package dev.alexjf.vanilla_improvements_agriculture.block;
 import java.util.Random;
 
 import dev.alexjf.vanilla_improvements_agriculture.block.enums.PostType;
-import dev.alexjf.vanilla_improvements_agriculture.item.ItemRegistry;
+import dev.alexjf.vanilla_improvements_agriculture.item.VanillaImprovementAgricultureItems;
 import dev.alexjf.vanilla_improvements_agriculture.state.property.VanillaImprovementsAgricultureProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -32,22 +32,22 @@ public class PostCropBlock extends CropBlock {
 		PostType postType = (PostType)state.get(TYPE);
 		switch(postType) {
 			case OAK_LOG_POST:
-				world.setBlockState(pos, BlockRegistry.OAK_LOG_POST.getDefaultState(), 3);
+				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_LOG_POST.getDefaultState(), 3);
 				break;
 			case OAK_PLANKS_POST:
-				world.setBlockState(pos, BlockRegistry.OAK_PLANKS_POST.getDefaultState(), 3);
+				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_PLANKS_POST.getDefaultState(), 3);
 				break;
 			case OAK_WOOD_POST:
-				world.setBlockState(pos, BlockRegistry.OAK_WOOD_POST.getDefaultState(), 3);
+				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_WOOD_POST.getDefaultState(), 3);
 				break;
 			case STRIPPED_OAK_LOG_POST:
-				world.setBlockState(pos, BlockRegistry.STRIPPED_OAK_LOG_POST.getDefaultState(), 3);
+				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.STRIPPED_OAK_LOG_POST.getDefaultState(), 3);
 				break;
 			case STRIPPED_OAK_WOOD_POST:
-				world.setBlockState(pos, BlockRegistry.STRIPPED_OAK_WOOD_POST.getDefaultState(), 3);
+				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.STRIPPED_OAK_WOOD_POST.getDefaultState(), 3);
 				break;
 			default: 
-				world.setBlockState(pos, BlockRegistry.OAK_LOG_POST.getDefaultState(), 3);
+				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_LOG_POST.getDefaultState(), 3);
 			}
 	}
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -95,6 +95,6 @@ public class PostCropBlock extends CropBlock {
 
 	@Override
 	protected ItemConvertible getSeedsItem() {
-		return ItemRegistry.TOMATO_SEEDS;
+		return VanillaImprovementAgricultureItems.TOMATO_SEEDS;
 	}
 }

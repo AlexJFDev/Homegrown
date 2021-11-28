@@ -11,10 +11,10 @@ public class CantaloupeBlock extends GourdBlock {
 	}
 
 	public StemBlock getStem() {
-		return (StemBlock)BlockRegistry.CANTALOUPE_STEM;
+		return (StemBlock)VanillaImprovementsAgricultureBlocks.CANTALOUPE_STEM;
 	}
 
 	public AttachedStemBlock getAttachedStem() {
-		return (AttachedStemBlock)BlockRegistry.ATTACHED_CANTALOUPE_STEM;
+		return (AttachedStemBlock)VanillaImprovementsAgricultureBlocks.ATTACHED_CANTALOUPE_STEM;
 	}
 }

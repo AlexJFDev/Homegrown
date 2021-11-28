@@ -1,6 +1,6 @@
 package dev.alexjf.vanilla_improvements_agriculture.block;
 
-import dev.alexjf.vanilla_improvements_agriculture.item.ItemRegistry;
+import dev.alexjf.vanilla_improvements_agriculture.item.VanillaImprovementAgricultureItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -11,7 +11,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class BlockRegistry {
+public class VanillaImprovementsAgricultureBlocks {
     static String MOD_ID = "vanilla_improvements_agriculture";
     
     public static final Block OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
@@ -19,14 +19,14 @@ public class BlockRegistry {
 	public static final Block OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block BARLEY_CROP = new Crop(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block BARLEY_CROP = new VanillaImprovementAgricultureCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final PostCropBlock TOMATO_CROP = new PostCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedCantaloupeStem((GourdBlock)CANTALOUPE_BLOCK, () -> {
-		return ItemRegistry.CANTALOUPE_SEEDS;
+    public static final Block ATTACHED_CANTALOUPE_STEM = new VanillaImprovementAgricultureAttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
+		return VanillaImprovementAgricultureItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD));
-	public static final Block CANTALOUPE_STEM = new CantaloupeStem((GourdBlock)CANTALOUPE_BLOCK, () -> {
-		return ItemRegistry.CANTALOUPE_SEEDS;
+	public static final Block CANTALOUPE_STEM = new VanillaImprovementAgricultureStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
+		return VanillaImprovementAgricultureItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
 	
 
