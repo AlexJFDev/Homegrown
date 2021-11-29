@@ -20,7 +20,7 @@ public class VanillaImprovementsAgricultureBlocks {
 	public static final Block STRIPPED_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block BARLEY_CROP = new VanillaImprovementAgricultureCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-	public static final PostCropBlock TOMATO_CROP = new PostCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final PostCropBlock TOMATO_CROP = new PostCropBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block ATTACHED_CANTALOUPE_STEM = new VanillaImprovementAgricultureAttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return VanillaImprovementAgricultureItems.CANTALOUPE_SEEDS;

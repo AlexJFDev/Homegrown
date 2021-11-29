@@ -14,6 +14,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
@@ -30,25 +31,7 @@ public class PostCropBlock extends CropBlock {
 	@Override
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
 		PostType postType = (PostType)state.get(TYPE);
-		switch(postType) {
-			case OAK_LOG_POST:
-				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_LOG_POST.getDefaultState(), 3);
-				break;
-			case OAK_PLANKS_POST:
-				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_PLANKS_POST.getDefaultState(), 3);
-				break;
-			case OAK_WOOD_POST:
-				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_WOOD_POST.getDefaultState(), 3);
-				break;
-			case STRIPPED_OAK_LOG_POST:
-				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.STRIPPED_OAK_LOG_POST.getDefaultState(), 3);
-				break;
-			case STRIPPED_OAK_WOOD_POST:
-				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.STRIPPED_OAK_WOOD_POST.getDefaultState(), 3);
-				break;
-			default: 
-				world.setBlockState(pos, VanillaImprovementsAgricultureBlocks.OAK_LOG_POST.getDefaultState(), 3);
-			}
+		world.setBlockState(pos, getPostType(postType), 3);
 	}
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 		return VoxelShapes.cuboid(.125f, 0f, .125f, .875f, 1f, 0.875f);
@@ -82,6 +65,23 @@ public class PostCropBlock extends CropBlock {
 
 	}
 
+	public BlockState getPostType(PostType postType){
+		switch(postType) {
+			case OAK_LOG_POST:
+				return VanillaImprovementsAgricultureBlocks.OAK_LOG_POST.getDefaultState();
+			case OAK_PLANKS_POST:
+				return VanillaImprovementsAgricultureBlocks.OAK_PLANKS_POST.getDefaultState();
+			case OAK_WOOD_POST:
+				return VanillaImprovementsAgricultureBlocks.OAK_WOOD_POST.getDefaultState();
+			case STRIPPED_OAK_LOG_POST:
+				return VanillaImprovementsAgricultureBlocks.STRIPPED_OAK_LOG_POST.getDefaultState();
+			case STRIPPED_OAK_WOOD_POST:
+				return VanillaImprovementsAgricultureBlocks.STRIPPED_OAK_WOOD_POST.getDefaultState();
+			default: 
+				return VanillaImprovementsAgricultureBlocks.OAK_LOG_POST.getDefaultState();
+			}
+	}
+
 	@Override
 	public void applyGrowth(World world, BlockPos pos, BlockState state) {
 		int i = this.getAge(state) + this.getGrowthAmount(world);
@@ -96,5 +96,10 @@ public class PostCropBlock extends CropBlock {
 	@Override
 	protected ItemConvertible getSeedsItem() {
 		return VanillaImprovementAgricultureItems.TOMATO_SEEDS;
+	}
+
+	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+		PostType postType = (PostType)state.get(TYPE);
+		return !state.canPlaceAt(world, pos) ? getPostType(postType) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 	}
 }

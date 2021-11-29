@@ -1,14 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "vanilla_improvements_agriculture",
-  "version": "Alpha 0",
+  "version": "Alpha 0.0.1",
 
   "name": "Vanilla Improvements:Agriculture",
   "description": "Vanilla Improvements:Agriculture",
   "authors": [
-    "Likbeingawesome",
-    "Daryus",
-    "Josh"
+    "Likbeingawesome"
   ],
   "contact": {
     "homepage": "https://alexjf.dev/",
