@@ -62,7 +62,6 @@ public class PostCropBlock extends CropBlock {
 				}
 			}
 		}
-
 	}
 
 	public BlockState getPostType(PostType postType){
@@ -97,9 +96,10 @@ public class PostCropBlock extends CropBlock {
 	protected ItemConvertible getSeedsItem() {
 		return VanillaImprovementAgricultureItems.TOMATO_SEEDS;
 	}
-
+	
+	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		PostType postType = (PostType)state.get(TYPE);
-		return !state.canPlaceAt(world, pos) ? getPostType(postType) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+		return !state.canPlaceAt(world, pos) ? this.getPostType(postType) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 	}
 }
