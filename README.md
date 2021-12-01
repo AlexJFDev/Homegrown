@@ -1,6 +1,5 @@
-This README is a WIP
 # **Welcome to Vanilla Improvements: Agriculture**
-Alpha 0.0.1
+### Version: 0.0.1-alpha
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Features
 - New Ways To Grow Crops
