@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "vanilla_improvements_agriculture",
-  "version": "Alpha 0.0.1",
+  "version": "0.0.1-alpha",
 
-  "name": "Vanilla Improvements:Agriculture",
-  "description": "Vanilla Improvements:Agriculture",
+  "name": "Vanilla Improvements Agriculture",
+  "description": "Vanilla Improvements Agriculture",
   "authors": [
     "Likbeingawesome"
   ],
@@ -32,8 +32,8 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "minecraft": "1.18.x",
+    "java": ">=17"
   },
   "suggests": {
     "another-mod": "*"

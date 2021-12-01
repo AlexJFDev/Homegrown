@@ -25,7 +25,7 @@ public class TomatoPostCropBlock extends PostCropBlock{
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         int i = this.getAge(state);
-        if(i>=6){
+        if(i >= 6){
             dropStacks(state, world, pos);
             world.setBlockState(pos, this.withAge(5).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;
