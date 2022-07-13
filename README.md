@@ -1,4 +1,4 @@
-# **Welcome to Vanilla Improvements: Agriculture**
+# **Welcome to Homegrown**
 ### Version: 0.0.1-alpha
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Features
@@ -14,7 +14,6 @@
     - Green Beans (planned)
     - Chillis (planned)
     - Cucumber (planned)
-    - 
   - Standard Crops
     - Barley
     - Corn (grows tall) (planned)
@@ -49,7 +48,6 @@
   - Mango Tree (planned)
   - Grapefruit Tree (planned)
 - New Crafting (planned)
-  - Crushing* (planned)
   - Crushing* (planned)
   - Brewing* (planned)
   - Drying (planned)
