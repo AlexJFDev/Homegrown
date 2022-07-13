@@ -1,12 +1,12 @@
 {
     "replace": false,
     "values": [
-      "vanilla_improvements_agriculture:oak_planks_post",
-      "vanilla_improvements_agriculture:oak_log_post",
-      "vanilla_improvements_agriculture:stripped_oak_log_post",
-      "vanilla_improvements_agriculture:oak_wood_post",
-      "vanilla_improvements_agriculture:stripped_oak_wood_post",
-      "vanilla_improvements_agriculture:cantaloupe_block"
+      "homegrown:oak_planks_post",
+      "homegrown:oak_log_post",
+      "homegrown:stripped_oak_log_post",
+      "homegrown:oak_wood_post",
+      "homegrown:stripped_oak_wood_post",
+      "homegrown:cantaloupe_block"
     ]
   }
 

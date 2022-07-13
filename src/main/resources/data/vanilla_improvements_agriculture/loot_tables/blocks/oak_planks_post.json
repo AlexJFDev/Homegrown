@@ -6,7 +6,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "vanilla_improvements_agriculture:oak_planks_post"
+            "name": "homegrown:oak_planks_post"
           }
         ],
         "conditions": [

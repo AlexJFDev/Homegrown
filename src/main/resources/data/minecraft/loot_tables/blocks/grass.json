@@ -31,7 +31,7 @@
                 },
                 {
                   "type": "minecraft:item",
-                  "name": "vanilla_improvements_agriculture:barley_seeds",
+                  "name": "homegrown:barley_seeds",
                   "conditions": [
                     {
                       "condition": "minecraft:location_check",
@@ -43,7 +43,7 @@
                 },
                 {
                   "type": "minecraft:item",
-                  "name": "vanilla_improvements_agriculture:barley_seeds",
+                  "name": "homegrown:barley_seeds",
                   "conditions": [
                     {
                       "condition": "minecraft:location_check",

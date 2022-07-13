@@ -7,11 +7,11 @@
   ],
   "key": {
     "M": {
-      "item": "vanilla_improvements_agriculture:cantaloupe_slice"
+      "item": "homegrown:cantaloupe_slice"
     }
   },
   "result": {
-    "item": "vanilla_improvements_agriculture:cantaloupe_block",
+    "item": "homegrown:cantaloupe_block",
     "count": 1
   }
 }

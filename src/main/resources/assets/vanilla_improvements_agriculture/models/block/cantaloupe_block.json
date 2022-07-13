@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "vanilla_improvements_agriculture:block/cantaloupe_top",
-    "side": "vanilla_improvements_agriculture:block/cantaloupe_side"
-  }
-}

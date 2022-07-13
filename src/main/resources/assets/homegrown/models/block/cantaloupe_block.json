@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "homegrown:block/cantaloupe_top",
+    "side": "homegrown:block/cantaloupe_side"
+  }
+}

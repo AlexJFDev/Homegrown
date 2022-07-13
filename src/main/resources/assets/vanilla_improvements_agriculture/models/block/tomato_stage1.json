@@ -1,6 +1,0 @@
-{
-  "parent": "vanilla_improvements_agriculture:block/template_post_crop",
-  "textures": {
-    "crop": "vanilla_improvements_agriculture:block/tomato_growth0"
-  }
-}

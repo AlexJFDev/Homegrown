@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "vanilla_improvements_agriculture",
+  "id": "homegrown",
   "version": "0.0.1-alpha",
 
-  "name": "Vanilla Improvements Agriculture",
-  "description": "Vanilla Improvements Agriculture",
+  "name": "Homegrown",
+  "description": "Homegrown",
   "authors": [
     "Likbeingawesome"
   ],
   "contact": {
     "homepage": "https://alexjf.dev/",
-    "sources": "https://github.com/likebeingawesome/Vanilla-Improvements-Agriculutre"
+    "sources": "https://github.com/likebeingawesome/Homegrown"
   },
 
   "license": "CC0-1.0",
@@ -19,14 +19,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.alexjf.vanilla_improvements_agriculture.VanillaImprovementsAgriculture"
+      "dev.alexjf.homegrown.Homegrown"
     ],
     "client": [
-      "dev.alexjf.vanilla_improvements_agriculture.VanillaImprovementsAgricultureClient"
+      "dev.alexjf.homegrown.HomegrownClient"
     ]
   },
   "mixins": [
-    "vanilla_improvements_agriculture.mixins.json"
+    "homegrown.mixins.json"
   ],
 
   "depends": {

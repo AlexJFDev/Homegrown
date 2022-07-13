@@ -6,7 +6,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "vanilla_improvements_agriculture:oak_log_post"
+            "name": "homegrown:oak_log_post"
           }
         ],
         "conditions": [

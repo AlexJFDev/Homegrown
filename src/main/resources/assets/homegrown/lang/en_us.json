@@ -1,0 +1,20 @@
+{
+    "block.homegrown.oak_planks_post": "Oak Planks Post",
+    "block.homegrown.stripped_oak_log_post": "Stripped Oak Log Post",
+    "block.homegrown.oak_log_post": "Oak Log Post",
+    "block.homegrown.stripped_oak_wood_post": "Stripped Oak Wood Post",
+    "block.homegrown.oak_wood_post": "Oak Wood Post",
+    
+    "item.homegrown.tomato_seeds": "Tomato Seeds",
+    "item.homegrown.green_tomato": "Green Tomato",
+    "item.homegrown.red_tomato": "Red Tomato",
+    "item.homegrown.barley_seeds": "Barley Seeds",
+    "item.homegrown.barley": "Barley",
+    "item.homegrown.cantaloupe_seeds": "Cantaloupe Seeds",
+    "item.homegrown.cantaloupe_slice": "Cantaloupe Slice",
+    "block.homegrown.cantaloupe_block": "Cantaloupe Block",
+
+
+    "itemGroup.homegrown.blocks": "VI Agriculture:Blocks",
+    "itemGroup.homegrown.items": "VI Agriculture:Items"
+}

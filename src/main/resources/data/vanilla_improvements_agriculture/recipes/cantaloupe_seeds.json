@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "vanilla_improvements_agriculture:cantaloupe_slice"
+      "item": "homegrown:cantaloupe_slice"
     }
   ],
   "result": {
-    "item": "vanilla_improvements_agriculture:cantaloupe_seeds",
+    "item": "homegrown:cantaloupe_seeds",
     "count": 1
   }
 }

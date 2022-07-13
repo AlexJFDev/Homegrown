@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "homegrown:block/attached_cantaloupe_stem",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "homegrown:block/attached_cantaloupe_stem",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "homegrown:block/attached_cantaloupe_stem",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "homegrown:block/attached_cantaloupe_stem"
+    }
+  }
+}

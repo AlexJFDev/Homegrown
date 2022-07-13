@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "vanilla_improvements_agriculture:item/red_tomato"
-  }
-}
