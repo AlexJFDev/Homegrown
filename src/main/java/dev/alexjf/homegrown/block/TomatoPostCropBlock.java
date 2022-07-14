@@ -2,11 +2,16 @@ package dev.alexjf.homegrown.block;
 
 import java.util.Random;
 
+import org.jetbrains.annotations.Nullable;
+
 import dev.alexjf.homegrown.block.enums.PostType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -17,7 +22,16 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class TomatoPostCropBlock extends PostCropBlock{
-    
+    BlockPos blockPosition;
+
+    public BlockPos getBlockPosition() {
+        return blockPosition;
+    }
+
+    public void setBlockPosition(BlockPos pos){
+        blockPosition = pos;
+    }
+
     protected TomatoPostCropBlock(Settings settings) {
         super(settings);
     }
@@ -62,7 +76,7 @@ public class TomatoPostCropBlock extends PostCropBlock{
                 }
             }
 			else if (i < this.getMaxAge()) {
-				float f = getAvailableMoisture(this, world, pos);
+				float f = TomatoPostCropBlock.getAvailableMoisture(this, world, pos);
 				if (random.nextInt((int)(25.0F / f) + 1) == 0) {
 					world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
 				}
@@ -70,8 +84,35 @@ public class TomatoPostCropBlock extends PostCropBlock{
 		}
 	}
 
+    // This could become a problem in the future; it needs looking into.
+    @Override
+    public boolean hasRandomTicks(BlockState state) {
+        return true;
+    }
+
+    public static float getAvailableMoisture(Block block, BlockView world, BlockPos pos){
+        BlockPos blockPosition = pos.down();
+        if(world.getBlockState(pos).isOf(Blocks.FARMLAND)){
+            return CropBlock.getAvailableMoisture(block, world, pos);
+        } else {
+            return TomatoPostCropBlock.getAvailableMoisture(block, world, blockPosition);
+        }
+    }
+    
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
 		return floor.isOf(Blocks.FARMLAND) || floor.getBlock() instanceof TomatoPostCropBlock;
 	}
+
+    @Override
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (!state.canPlaceAt(world, pos)) {
+            world.breakBlock(pos, true);
+        }
+    }
+
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        setBlockPosition(pos);
+    }
 }

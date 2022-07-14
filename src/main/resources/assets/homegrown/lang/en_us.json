@@ -15,6 +15,6 @@
     "block.homegrown.cantaloupe_block": "Cantaloupe Block",
 
 
-    "itemGroup.homegrown.blocks": "VI Agriculture:Blocks",
-    "itemGroup.homegrown.items": "VI Agriculture:Items"
+    "itemGroup.homegrown.blocks": "Homegrown:Blocks",
+    "itemGroup.homegrown.items": "Homegrown:Items"
 }
