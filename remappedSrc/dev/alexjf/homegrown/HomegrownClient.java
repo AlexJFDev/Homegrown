@@ -26,5 +26,6 @@ public class HomegrownClient implements ClientModInitializer {
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
 			return 14731036;
 		}, HomegrownBlocks.ATTACHED_CANTALOUPE_STEM);
+		
 	}
 }

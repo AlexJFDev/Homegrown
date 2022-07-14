@@ -13,7 +13,7 @@ public class HomegrownItems {
 
     public static final Item BARLEY = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
 	public static final Item BARLEY_SEEDS = new AliasedBlockItem(HomegrownBlocks.BARLEY_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
-	//public static final Item ROTTEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
+	public static final Item ROTTEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
 	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.GREEN_TOMATO));
 	public static final Item RED_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.RED_TOMATO));
 	public static final Item TOMATO_SEEDS = new PostCropSeeds(HomegrownBlocks.TOMATO_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
