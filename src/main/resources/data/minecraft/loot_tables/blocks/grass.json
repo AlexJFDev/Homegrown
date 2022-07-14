@@ -52,6 +52,78 @@
                       }
                     }
                   ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:tomato_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:meadow"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:tomato_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:grove"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:tomato_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:snowy_slopes"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:tomato_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:jagged_peaks"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:tomato_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:frozen_peaks"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:tomato_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:stony_peaks"
+                      }
+                    }
+                  ]
                 }
               ]
             }
