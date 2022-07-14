@@ -56,10 +56,10 @@
   - Cooking/Baking (planned)
     - A Brick Oven that is placed over a fire (planned)
 - Lots of new food recipies (planned)
-
+### Dependencies
+- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 ### Recommended Mods
 - [Rustic Mod](https://www.curseforge.com/minecraft/mc-mods/rustic)
-### Recommended Modpacks
 ### Shout Outs
 #### [The Fabric Project Discord Server](https://discord.gg/Gg6FGkTEVF)
 A big thank you to the Staff and all the members of the Fabric Project Discord Server. The server members have been a huge source of assistance throughout the development of this mod.
