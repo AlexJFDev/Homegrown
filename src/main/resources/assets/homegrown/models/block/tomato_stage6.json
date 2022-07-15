@@ -1,6 +1,6 @@
 {
   "parent": "homegrown:block/template_post_crop",
   "textures": {
-    "crop": "homegrown:block/tomato_growth3"
+    "crop": "homegrown:block/tomato_stage6"
   }
 }
