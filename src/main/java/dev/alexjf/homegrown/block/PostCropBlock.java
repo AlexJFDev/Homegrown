@@ -76,6 +76,76 @@ public class PostCropBlock extends CropBlock {
 				return HomegrownBlocks.STRIPPED_OAK_LOG_POST.getDefaultState();
 			case STRIPPED_OAK_WOOD_POST:
 				return HomegrownBlocks.STRIPPED_OAK_WOOD_POST.getDefaultState();
+			case SPRUCE_PLANKS_POST:
+				return HomegrownBlocks.SPRUCE_PLANKS_POST.getDefaultState();
+			case SPRUCE_LOG_POST:
+				return HomegrownBlocks.SPRUCE_LOG_POST.getDefaultState();
+			case STRIPPED_SPRUCE_LOG_POST:
+				return HomegrownBlocks.STRIPPED_SPRUCE_LOG_POST.getDefaultState();
+			case SPRUCE_WOOD_POST:
+				return HomegrownBlocks.SPRUCE_WOOD_POST.getDefaultState();
+			case STRIPPED_SPRUCE_WOOD_POST:
+				return HomegrownBlocks.STRIPPED_SPRUCE_WOOD_POST.getDefaultState();
+			case BIRCH_PLANKS_POST:
+				return HomegrownBlocks.BIRCH_PLANKS_POST.getDefaultState();
+			case BIRCH_LOG_POST:
+				return HomegrownBlocks.BIRCH_LOG_POST.getDefaultState();
+			case STRIPPED_BIRCH_LOG_POST:
+				return HomegrownBlocks.STRIPPED_BIRCH_LOG_POST.getDefaultState();
+			case BIRCH_WOOD_POST:
+				return HomegrownBlocks.BIRCH_WOOD_POST.getDefaultState();
+			case STRIPPED_BIRCH_WOOD_POST:
+				return HomegrownBlocks.STRIPPED_BIRCH_WOOD_POST.getDefaultState();
+			case JUNGLE_PLANKS_POST:
+				return HomegrownBlocks.JUNGLE_PLANKS_POST.getDefaultState();
+			case JUNGLE_LOG_POST:
+				return HomegrownBlocks.JUNGLE_LOG_POST.getDefaultState();
+			case STRIPPED_JUNGLE_LOG_POST:
+				return HomegrownBlocks.STRIPPED_JUNGLE_LOG_POST.getDefaultState();
+			case JUNGLE_WOOD_POST:
+				return HomegrownBlocks.JUNGLE_WOOD_POST.getDefaultState();
+			case STRIPPED_JUNGLE_WOOD_POST:
+				return HomegrownBlocks.STRIPPED_JUNGLE_WOOD_POST.getDefaultState();
+			case ACACIA_PLANKS_POST:
+				return HomegrownBlocks.ACACIA_PLANKS_POST.getDefaultState();
+			case ACACIA_LOG_POST:
+				return HomegrownBlocks.ACACIA_LOG_POST.getDefaultState();
+			case STRIPPED_ACACIA_LOG_POST:
+				return HomegrownBlocks.STRIPPED_ACACIA_LOG_POST.getDefaultState();
+			case ACACIA_WOOD_POST:
+				return HomegrownBlocks.ACACIA_WOOD_POST.getDefaultState();
+			case STRIPPED_ACACIA_WOOD_POST:
+				return HomegrownBlocks.STRIPPED_ACACIA_WOOD_POST.getDefaultState();
+			case DARK_OAK_PLANKS_POST:
+				return HomegrownBlocks.DARK_OAK_PLANKS_POST.getDefaultState();
+			case DARK_OAK_LOG_POST:
+				return HomegrownBlocks.DARK_OAK_LOG_POST.getDefaultState();
+			case STRIPPED_DARK_OAK_LOG_POST:
+				return HomegrownBlocks.STRIPPED_DARK_OAK_LOG_POST.getDefaultState();
+			case DARK_OAK_WOOD_POST:
+				return HomegrownBlocks.DARK_OAK_WOOD_POST.getDefaultState();
+			case STRIPPED_DARK_OAK_WOOD_POST:
+				return HomegrownBlocks.STRIPPED_DARK_OAK_WOOD_POST.getDefaultState();
+			case CRIMSON_PLANKS_POST:
+				return HomegrownBlocks.CRIMSON_PLANKS_POST.getDefaultState();
+			case CRIMSON_STEM_POST:
+				return HomegrownBlocks.CRIMSON_STEM_POST.getDefaultState();
+			case STRIPPED_CRIMSON_STEM_POST:
+				return HomegrownBlocks.STRIPPED_CRIMSON_STEM_POST.getDefaultState();
+			case CRIMSON_HYPHAE_POST:
+				return HomegrownBlocks.CRIMSON_HYPHAE_POST.getDefaultState();
+			case STRIPPED_CRIMSON_HYPHAE_POST:
+				return HomegrownBlocks.STRIPPED_CRIMSON_HYPHAE_POST.getDefaultState();
+			case WARPED_PLANKS_POST:
+				return HomegrownBlocks.WARPED_PLANKS_POST.getDefaultState();
+			case WARPED_STEM_POST:
+				return HomegrownBlocks.WARPED_STEM_POST.getDefaultState();
+			case STRIPPED_WARPED_STEM_POST:
+				return HomegrownBlocks.STRIPPED_WARPED_STEM_POST.getDefaultState();
+			case WARPED_HYPHAE_POST:
+				return HomegrownBlocks.WARPED_HYPHAE_POST.getDefaultState();
+			case STRIPPED_WARPED_HYPHAE_POST:
+				return HomegrownBlocks.STRIPPED_WARPED_HYPHAE_POST.getDefaultState();
 			default: 
 				return HomegrownBlocks.OAK_LOG_POST.getDefaultState();
 			}

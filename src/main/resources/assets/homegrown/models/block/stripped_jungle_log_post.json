@@ -1,0 +1,7 @@
+{
+    "parent": "homegrown:block/template_post",
+    "textures": {
+        "side": "minecraft:block/stripped_jungle_log",
+        "top": "minecraft:block/stripped_jungle_log_top"
+    }
+}

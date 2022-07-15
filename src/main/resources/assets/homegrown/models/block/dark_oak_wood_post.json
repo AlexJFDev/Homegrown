@@ -1,0 +1,7 @@
+{
+    "parent": "homegrown:block/template_post",
+    "textures": {
+        "side": "minecraft:block/dark_oak_log",
+        "top": "minecraft:block/dark_oak_log"
+    }
+}

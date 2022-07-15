@@ -103,6 +103,286 @@
       "apply": {
         "model": "homegrown:block/stripped_oak_wood_post"
       }
+    },
+    {
+      "apply": {
+          "model": "homegrown:block/spruce_planks_post"
+      },
+      "when": {
+          "type": "spruce_planks_post"
+      }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/spruce_log_post"
+        },
+        "when": {
+            "type": "spruce_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_spruce_log_post"
+        },
+        "when": {
+            "type": "stripped_spruce_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/spruce_wood_post"
+        },
+        "when": {
+            "type": "spruce_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_spruce_wood_post"
+        },
+        "when": {
+            "type": "stripped_spruce_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/birch_planks_post"
+        },
+        "when": {
+            "type": "birch_planks_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/birch_log_post"
+        },
+        "when": {
+            "type": "birch_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_birch_log_post"
+        },
+        "when": {
+            "type": "stripped_birch_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/birch_wood_post"
+        },
+        "when": {
+            "type": "birch_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_birch_wood_post"
+        },
+        "when": {
+            "type": "stripped_birch_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/jungle_planks_post"
+        },
+        "when": {
+            "type": "jungle_planks_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/jungle_log_post"
+        },
+        "when": {
+            "type": "jungle_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_jungle_log_post"
+        },
+        "when": {
+            "type": "stripped_jungle_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/jungle_wood_post"
+        },
+        "when": {
+            "type": "jungle_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_jungle_wood_post"
+        },
+        "when": {
+            "type": "stripped_jungle_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/acacia_planks_post"
+        },
+        "when": {
+            "type": "acacia_planks_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/acacia_log_post"
+        },
+        "when": {
+            "type": "acacia_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_acacia_log_post"
+        },
+        "when": {
+            "type": "stripped_acacia_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/acacia_wood_post"
+        },
+        "when": {
+            "type": "acacia_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_acacia_wood_post"
+        },
+        "when": {
+            "type": "stripped_acacia_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/dark_oak_planks_post"
+        },
+        "when": {
+            "type": "dark_oak_planks_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/dark_oak_log_post"
+        },
+        "when": {
+            "type": "dark_oak_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_dark_oak_log_post"
+        },
+        "when": {
+            "type": "stripped_dark_oak_log_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/dark_oak_wood_post"
+        },
+        "when": {
+            "type": "dark_oak_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_dark_oak_wood_post"
+        },
+        "when": {
+            "type": "stripped_dark_oak_wood_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/crimson_planks_post"
+        },
+        "when": {
+            "type": "crimson_planks_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/crimson_stem_post"
+        },
+        "when": {
+            "type": "crimson_stem_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_crimson_stem_post"
+        },
+        "when": {
+            "type": "stripped_crimson_stem_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/crimson_hyphae_post"
+        },
+        "when": {
+            "type": "crimson_hyphae_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_crimson_hyphae_post"
+        },
+        "when": {
+            "type": "stripped_crimson_hyphae_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/warped_planks_post"
+        },
+        "when": {
+            "type": "warped_planks_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/warped_stem_post"
+        },
+        "when": {
+            "type": "warped_stem_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_warped_stem_post"
+        },
+        "when": {
+            "type": "stripped_warped_stem_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/warped_hyphae_post"
+        },
+        "when": {
+            "type": "warped_hyphae_post"
+        }
+    },
+    {
+        "apply": {
+            "model": "homegrown:block/stripped_warped_hyphae_post"
+        },
+        "when": {
+            "type": "stripped_warped_hyphae_post"
+        }
     }
   ]
 }

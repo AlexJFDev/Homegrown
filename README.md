@@ -1,5 +1,5 @@
 # **Welcome to Homegrown**
-### Version: 0.0.2-alpha
+### Version: 0.0.3-alpha
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Features
 - New Ways To Grow Crops

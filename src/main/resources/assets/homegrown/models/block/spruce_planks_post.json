@@ -1,0 +1,7 @@
+{
+    "parent": "homegrown:block/template_post",
+    "textures": {
+        "side": "minecraft:block/spruce_planks",
+        "top": "minecraft:block/spruce_planks"
+    }
+}

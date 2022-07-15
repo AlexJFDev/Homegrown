@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "homegrown:block/birch_wood_post"
+        }
+    }
+}

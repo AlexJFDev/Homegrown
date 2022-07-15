@@ -48,6 +48,111 @@ public class PostBlock extends Block {
                     case "homegrown:stripped_oak_wood_post": 
                         world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_OAK_WOOD_POST));
                         break;
+                    case "spruce_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.SPRUCE_PLANKS_POST));
+                        break;
+                    case "spruce_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.SPRUCE_LOG_POST));
+                        break;
+                    case "stripped_spruce_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_SPRUCE_LOG_POST));
+                        break;
+                    case "spruce_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.SPRUCE_WOOD_POST));
+                        break;
+                    case "stripped_spruce_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_SPRUCE_WOOD_POST));
+                        break;
+                    case "birch_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.BIRCH_PLANKS_POST));
+                        break;
+                    case "birch_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.BIRCH_LOG_POST));
+                        break;
+                    case "stripped_birch_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_BIRCH_LOG_POST));
+                        break;
+                    case "birch_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.BIRCH_WOOD_POST));
+                        break;
+                    case "stripped_birch_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_BIRCH_WOOD_POST));
+                        break;
+                    case "jungle_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.JUNGLE_PLANKS_POST));
+                        break;
+                    case "jungle_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.JUNGLE_LOG_POST));
+                        break;
+                    case "stripped_jungle_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_JUNGLE_LOG_POST));
+                        break;
+                    case "jungle_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.JUNGLE_WOOD_POST));
+                        break;
+                    case "stripped_jungle_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_JUNGLE_WOOD_POST));
+                        break;
+                    case "acacia_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.ACACIA_PLANKS_POST));
+                        break;
+                    case "acacia_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.ACACIA_LOG_POST));
+                        break;
+                    case "stripped_acacia_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_ACACIA_LOG_POST));
+                        break;
+                    case "acacia_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.ACACIA_WOOD_POST));
+                        break;
+                    case "stripped_acacia_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_ACACIA_WOOD_POST));
+                        break;
+                    case "dark_oak_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.DARK_OAK_PLANKS_POST));
+                        break;
+                    case "dark_oak_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.DARK_OAK_LOG_POST));
+                        break;
+                    case "stripped_dark_oak_log_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_DARK_OAK_LOG_POST));
+                        break;
+                    case "dark_oak_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.DARK_OAK_WOOD_POST));
+                        break;
+                    case "stripped_dark_oak_wood_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_DARK_OAK_WOOD_POST));
+                        break;
+                    case "crimson_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.CRIMSON_PLANKS_POST));
+                        break;
+                    case "crimson_stem_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.CRIMSON_STEM_POST));
+                        break;
+                    case "stripped_crimson_stem_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_CRIMSON_STEM_POST));
+                        break;
+                    case "crimson_hyphae_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.CRIMSON_HYPHAE_POST));
+                        break;
+                    case "stripped_crimson_hyphae_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_CRIMSON_HYPHAE_POST));
+                        break;
+                    case "warped_planks_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.WARPED_PLANKS_POST));
+                        break;
+                    case "warped_stem_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.WARPED_STEM_POST));
+                        break;
+                    case "stripped_warped_stem_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_WARPED_STEM_POST));
+                        break;
+                    case "warped_hyphae_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.WARPED_HYPHAE_POST));
+                        break;
+                    case "stripped_warped_hyphae_post":
+                        world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.STRIPPED_WARPED_HYPHAE_POST));
+                        break;
                     default: world.setBlockState(pos, ((PostCropSeeds) stack.getItem()).getCrop().with(PostCropBlock.TYPE, PostType.OAK_LOG_POST));
                 }
 				if (!player.isCreative()) {

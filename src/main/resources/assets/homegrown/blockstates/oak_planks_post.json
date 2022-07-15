@@ -1,6 +1,7 @@
 {
     "variants": {
-      "": { "model": "homegrown:block/oak_planks_post" }
+      "": { 
+        "model": "homegrown:block/oak_planks_post" 
+      }
     }
   }
-

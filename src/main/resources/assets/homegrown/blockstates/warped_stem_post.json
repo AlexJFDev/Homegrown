@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "homegrown:block/warped_stem_post"
+        }
+    }
+}

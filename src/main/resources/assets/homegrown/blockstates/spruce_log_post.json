@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "homegrown:block/spruce_log_post"
+        }
+    }
+}

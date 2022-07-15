@@ -74,6 +74,111 @@ public class TomatoPostCropBlock extends PostCropBlock{
                     case "homegrown:stripped_oak_wood_post": 
                         world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_OAK_WOOD_POST));
                         break;
+                    case "spruce_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.SPRUCE_PLANKS_POST));
+                        break;
+                    case "spruce_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.SPRUCE_LOG_POST));
+                        break;
+                    case "stripped_spruce_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_SPRUCE_LOG_POST));
+                        break;
+                    case "spruce_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.SPRUCE_WOOD_POST));
+                        break;
+                    case "stripped_spruce_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_SPRUCE_WOOD_POST));
+                        break;
+                    case "birch_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.BIRCH_PLANKS_POST));
+                        break;
+                    case "birch_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.BIRCH_LOG_POST));
+                        break;
+                    case "stripped_birch_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_BIRCH_LOG_POST));
+                        break;
+                    case "birch_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.BIRCH_WOOD_POST));
+                        break;
+                    case "stripped_birch_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_BIRCH_WOOD_POST));
+                        break;
+                    case "jungle_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.JUNGLE_PLANKS_POST));
+                        break;
+                    case "jungle_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.JUNGLE_LOG_POST));
+                        break;
+                    case "stripped_jungle_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_JUNGLE_LOG_POST));
+                        break;
+                    case "jungle_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.JUNGLE_WOOD_POST));
+                        break;
+                    case "stripped_jungle_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_JUNGLE_WOOD_POST));
+                        break;
+                    case "acacia_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.ACACIA_PLANKS_POST));
+                        break;
+                    case "acacia_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.ACACIA_LOG_POST));
+                        break;
+                    case "stripped_acacia_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_ACACIA_LOG_POST));
+                        break;
+                    case "acacia_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.ACACIA_WOOD_POST));
+                        break;
+                    case "stripped_acacia_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_ACACIA_WOOD_POST));
+                        break;
+                    case "dark_oak_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.DARK_OAK_PLANKS_POST));
+                        break;
+                    case "dark_oak_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.DARK_OAK_LOG_POST));
+                        break;
+                    case "stripped_dark_oak_log_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_DARK_OAK_LOG_POST));
+                        break;
+                    case "dark_oak_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.DARK_OAK_WOOD_POST));
+                        break;
+                    case "stripped_dark_oak_wood_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_DARK_OAK_WOOD_POST));
+                        break;
+                    case "crimson_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.CRIMSON_PLANKS_POST));
+                        break;
+                    case "crimson_stem_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.CRIMSON_STEM_POST));
+                        break;
+                    case "stripped_crimson_stem_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_CRIMSON_STEM_POST));
+                        break;
+                    case "crimson_hyphae_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.CRIMSON_HYPHAE_POST));
+                        break;
+                    case "stripped_crimson_hyphae_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_CRIMSON_HYPHAE_POST));
+                        break;
+                    case "warped_planks_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.WARPED_PLANKS_POST));
+                        break;
+                    case "warped_stem_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.WARPED_STEM_POST));
+                        break;
+                    case "stripped_warped_stem_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_WARPED_STEM_POST));
+                        break;
+                    case "warped_hyphae_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.WARPED_HYPHAE_POST));
+                        break;
+                    case "stripped_warped_hyphae_post":
+                        world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.STRIPPED_WARPED_HYPHAE_POST));
+                        break;
                     default: world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.OAK_LOG_POST));
                 }
             }
@@ -120,11 +225,6 @@ public class TomatoPostCropBlock extends PostCropBlock{
         setBlockPosition(pos);
     }
 
-    /*@Override
-	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-		PostType postType = (PostType)state.get(TYPE);
-		return !state.canPlaceAt(world, pos) ? this.getPostType(postType) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-	}*/
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (!state.canPlaceAt(world, pos)) {
