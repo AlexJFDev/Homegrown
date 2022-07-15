@@ -14,5 +14,5 @@ public class HomegrownItemGroup {
 		() -> new ItemStack(HomegrownBlocks.OAK_LOG_POST));
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
 		new Identifier(MOD_ID, "items"),
-		() -> new ItemStack(HomegrownItems.BARLEY));
+		() -> new ItemStack(HomegrownItems.RED_TOMATO));
 }

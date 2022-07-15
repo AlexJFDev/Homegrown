@@ -11,9 +11,6 @@ import net.minecraft.util.registry.Registry;
 public class HomegrownItems {
     static String MOD_ID = "homegrown";
 
-    public static final Item BARLEY = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
-	public static final Item BARLEY_SEEDS = new AliasedBlockItem(HomegrownBlocks.BARLEY_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
-	//public static final Item ROTTEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
 	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.GREEN_TOMATO));
 	public static final Item RED_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.RED_TOMATO));
 	public static final Item TOMATO_SEEDS = new PostCropSeeds(HomegrownBlocks.TOMATO_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
@@ -63,8 +60,6 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "warped_hyphae_post"), new BlockItem(HomegrownBlocks.WARPED_HYPHAE_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_warped_hyphae_post"), new BlockItem(HomegrownBlocks.STRIPPED_WARPED_HYPHAE_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 
-		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "barley"), BARLEY);
-		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"barley_seeds"), BARLEY_SEEDS);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "red_tomato"), RED_TOMATO);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "green_tomato"), GREEN_TOMATO);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"tomato_seeds"), TOMATO_SEEDS);

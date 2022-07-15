@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "homegrown:red_tomato"
+      }
+    ],
+    "result": {
+      "item": "homegrown:tomato_seeds",
+      "count": 1
+    }
+  }

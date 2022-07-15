@@ -1,0 +1,17 @@
+{
+    "key": {
+        "#": {
+            "item": "minecraft:dark_oak_log"
+        }
+    },
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 4,
+        "item": "homegrown:dark_oak_log_post"
+    },
+    "type": "minecraft:crafting_shaped"
+}

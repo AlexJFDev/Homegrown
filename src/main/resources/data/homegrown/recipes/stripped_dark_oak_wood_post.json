@@ -1,0 +1,17 @@
+{
+    "key": {
+        "#": {
+            "item": "minecraft:stripped_dark_oak_wood"
+        }
+    },
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 4,
+        "item": "homegrown:stripped_dark_oak_wood_post"
+    },
+    "type": "minecraft:crafting_shaped"
+}

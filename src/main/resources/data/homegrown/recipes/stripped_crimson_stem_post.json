@@ -1,0 +1,17 @@
+{
+    "key": {
+        "#": {
+            "item": "minecraft:stripped_crimson_stem"
+        }
+    },
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 4,
+        "item": "homegrown:stripped_crimson_stem_post"
+    },
+    "type": "minecraft:crafting_shaped"
+}

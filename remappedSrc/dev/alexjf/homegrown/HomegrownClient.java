@@ -11,7 +11,6 @@ import net.minecraft.client.render.RenderLayer;
 public class HomegrownClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.BARLEY_CROP, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.ATTACHED_CANTALOUPE_STEM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.CANTALOUPE_STEM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.TOMATO_CROP, RenderLayer.getCutout());

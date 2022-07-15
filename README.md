@@ -1,5 +1,5 @@
 # **Welcome to Homegrown**
-### Version: 0.0.4-alpha
+### Version: 0.0.1-beta
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Features
 - New Ways To Grow Crops
@@ -12,10 +12,9 @@
   - Post & Trellis Crops
     - Tomato
     - Green Beans (planned)
-    - Chillis (planned)
+    - Chillies (planned)
     - Cucumber (planned)
   - Standard Crops
-    - Barley
     - Corn (grows tall) (planned)
     - Redgrass (planned)
     - Rice (planned)

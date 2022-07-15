@@ -31,30 +31,6 @@
                 },
                 {
                   "type": "minecraft:item",
-                  "name": "homegrown:barley_seeds",
-                  "conditions": [
-                    {
-                      "condition": "minecraft:location_check",
-                      "predicate": {
-                        "biome": "minecraft:plains"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "minecraft:item",
-                  "name": "homegrown:barley_seeds",
-                  "conditions": [
-                    {
-                      "condition": "minecraft:location_check",
-                      "predicate": {
-                        "biome": "minecraft:sunflower_plains"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "minecraft:item",
                   "name": "homegrown:tomato_seeds",
                   "conditions": [
                     {

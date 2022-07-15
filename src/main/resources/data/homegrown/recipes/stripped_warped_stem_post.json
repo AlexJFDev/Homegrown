@@ -1,0 +1,17 @@
+{
+    "key": {
+        "#": {
+            "item": "minecraft:stripped_warped_stem"
+        }
+    },
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 4,
+        "item": "homegrown:stripped_warped_stem_post"
+    },
+    "type": "minecraft:crafting_shaped"
+}
