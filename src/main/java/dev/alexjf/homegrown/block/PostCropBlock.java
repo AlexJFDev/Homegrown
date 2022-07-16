@@ -7,6 +7,7 @@ import dev.alexjf.homegrown.item.HomegrownItems;
 import dev.alexjf.homegrown.state.property.HomegrownProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemConvertible;
@@ -33,6 +34,7 @@ public class PostCropBlock extends CropBlock {
 		PostType postType = (PostType)state.get(TYPE);
 		world.setBlockState(pos, getPostType(postType), 3);
 	}
+	
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 		return VoxelShapes.cuboid(.125f, 0f, .125f, .875f, 1f, 0.875f);
 	}
@@ -168,8 +170,28 @@ public class PostCropBlock extends CropBlock {
 	}
 	
 	@Override
-	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-		PostType postType = (PostType)state.get(TYPE);
-		return !state.canPlaceAt(world, pos) ? this.getPostType(postType) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-	}
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (!state.canPlaceAt(world, pos)) {
+            world.createAndScheduleBlockTick(pos, this, 1);
+        }
+        return state;
+    }
+
+	@Override
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (!state.canPlaceAt(world, pos)) {
+            world.breakBlock(pos, true);
+        }
+        PostType postType = (PostType)state.get(TYPE);
+		world.setBlockState(pos, getPostType(postType), 3);
+    }
+
+	public static float getAvailableMoisture(Block block, BlockView world, BlockPos pos){
+        BlockPos blockPosition = pos.down();
+        if(world.getBlockState(pos).isOf(Blocks.FARMLAND)){
+            return CropBlock.getAvailableMoisture(block, world, pos);
+        } else {
+            return TomatoPostCropBlock.getAvailableMoisture(block, world, blockPosition);
+        }
+    }
 }

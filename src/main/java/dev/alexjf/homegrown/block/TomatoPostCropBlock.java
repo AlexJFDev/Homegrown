@@ -8,7 +8,6 @@ import dev.alexjf.homegrown.block.enums.PostType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CropBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -17,11 +16,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 
 public class TomatoPostCropBlock extends PostCropBlock{
     BlockPos blockPosition;
@@ -183,7 +180,7 @@ public class TomatoPostCropBlock extends PostCropBlock{
                 }
             }
 			else if (i < this.getMaxAge()) {
-				float f = TomatoPostCropBlock.getAvailableMoisture(this, world, pos);
+				float f = PostCropBlock.getAvailableMoisture(this, world, pos);
 				if (random.nextInt((int)(25.0F / f) + 1) == 0) {
 					world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
 				}
@@ -196,15 +193,6 @@ public class TomatoPostCropBlock extends PostCropBlock{
     public boolean hasRandomTicks(BlockState state) {
         return true;
     }
-
-    public static float getAvailableMoisture(Block block, BlockView world, BlockPos pos){
-        BlockPos blockPosition = pos.down();
-        if(world.getBlockState(pos).isOf(Blocks.FARMLAND)){
-            return CropBlock.getAvailableMoisture(block, world, pos);
-        } else {
-            return TomatoPostCropBlock.getAvailableMoisture(block, world, blockPosition);
-        }
-    }
     
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
@@ -212,24 +200,7 @@ public class TomatoPostCropBlock extends PostCropBlock{
 	}
 
     @Override
-    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (!state.canPlaceAt(world, pos)) {
-            world.breakBlock(pos, true);
-        }
-        PostType postType = (PostType)state.get(TYPE);
-		world.setBlockState(pos, getPostType(postType), 3);
-    }
-
-    @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         setBlockPosition(pos);
-    }
-
-    @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (!state.canPlaceAt(world, pos)) {
-            world.createAndScheduleBlockTick(pos, this, 1);
-        }
-        return state;
     }
 }
