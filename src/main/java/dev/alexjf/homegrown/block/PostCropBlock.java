@@ -73,9 +73,9 @@ public class PostCropBlock extends CropBlock {
 	}
 
 	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(TYPE);
-		stateManager.add(AGE);
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(TYPE);
+		builder.add(AGE);
     }
 
 	@Override

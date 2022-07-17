@@ -14,6 +14,8 @@ public class HomegrownItems {
 	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.GREEN_TOMATO));
 	public static final Item RED_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.RED_TOMATO));
 	public static final Item TOMATO_SEEDS = new PostCropSeeds(HomegrownBlocks.TOMATO_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
+	public static final Item CORN_SEEDS = new AliasedBlockItem(HomegrownBlocks.CORN_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
+	public static final Item CORN = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CANTALOUPE_SLICE));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
 
@@ -63,6 +65,8 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "red_tomato"), RED_TOMATO);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "green_tomato"), GREEN_TOMATO);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"tomato_seeds"), TOMATO_SEEDS);
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"corn_seeds"), CORN_SEEDS);
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "corn"), CORN);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "cantaloupe_slice"), CANTALOUPE_SLICE);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"cantaloupe_seeds"), CANTALOUPE_SEEDS);
     }
