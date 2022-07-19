@@ -1,0 +1,6 @@
+{
+    "parent": "homegrown:block/fixed_cross",
+    "textures": {
+      "cross": "homegrown:block/corn_top_stage7"
+    }
+  }

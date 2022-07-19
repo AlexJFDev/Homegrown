@@ -2,17 +2,13 @@ package dev.alexjf.homegrown.block;
 
 import java.util.Random;
 
-import org.jetbrains.annotations.Nullable;
-
 import dev.alexjf.homegrown.block.enums.PostType;
 import dev.alexjf.homegrown.item.HomegrownItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -22,19 +18,10 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class TomatoPostCropBlock extends PostCropBlock{
-    private BlockPos blockPosition;
+public class TomatoBlock extends PostCropBlock{
 
-    protected TomatoPostCropBlock(Settings settings) {
+    protected TomatoBlock(Settings settings) {
         super(settings);
-    }
-
-    public BlockPos getBlockPosition() {
-        return blockPosition;
-    }
-
-    public void setBlockPosition(BlockPos pos){
-        blockPosition = pos;
     }
 
     @Override
@@ -50,13 +37,8 @@ public class TomatoPostCropBlock extends PostCropBlock{
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-		return floor.isOf(Blocks.FARMLAND) || floor.getBlock() instanceof TomatoPostCropBlock;
+		return floor.isOf(Blocks.FARMLAND) || floor.isOf(this);
 	}
-
-    @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        setBlockPosition(pos);
-    }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
@@ -72,18 +54,18 @@ public class TomatoPostCropBlock extends PostCropBlock{
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (world.getBaseLightLevel(pos, 0) >= 9) {
-			int i = this.getAge(state);
-            int j;
-			for(j = 1; world.getBlockState(pos.down(j)).isOf(this); ++j){}
-            if (i >= 5 && world.getBlockState(pos.up()).getBlock() instanceof PostBlock && j < 3){
-                String postIdentifier = Registry.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
-                world.setBlockState(pos.up(), this.withAge(0).with(TomatoPostCropBlock.TYPE, PostType.getPostType(postIdentifier)));
-            }
-			else if (i < this.getMaxAge()) {
-				float f = PostCropBlock.getAvailableMoisture(this, world, pos);
-				if (random.nextInt((int)(25.0F / f) + 1) == 0) {
-					world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
-				}
+            float f = PostCropBlock.getAvailableMoisture(this, world, pos);
+			if (random.nextInt((int)(25.0F / f) + 1) == 0) {
+                int i = this.getAge(state);
+                int j;
+                for(j = 1; world.getBlockState(pos.down(j)).isOf(this); ++j){}
+                if (i >= 5 && world.getBlockState(pos.up()).getBlock() instanceof PostBlock && j < 3){
+                    String postIdentifier = Registry.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
+                    world.setBlockState(pos.up(), this.withAge(0).with(TomatoBlock.TYPE, PostType.getPostType(postIdentifier)));
+                }
+                else if (i < this.getMaxAge()) {
+                    world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
+                }
 			}
 		}
 	}

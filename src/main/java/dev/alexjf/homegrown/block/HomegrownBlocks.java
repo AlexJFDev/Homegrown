@@ -4,7 +4,6 @@ import dev.alexjf.homegrown.item.HomegrownItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.CropBlock;
 import net.minecraft.block.GourdBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
@@ -56,8 +55,8 @@ public class HomegrownBlocks {
 	public static final Block WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	
-	public static final Block TOMATO_CROP = new TomatoPostCropBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-	public static final Block CORN_CROP = new TallCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block TOMATO_CROP = new TomatoBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block CORN_CROP = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block ATTACHED_CANTALOUPE_STEM = new HomegrownAttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
