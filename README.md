@@ -2,7 +2,7 @@
 ### Version: 0.1.3-beta
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Wiki
-
+The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Homegrown/wiki](https://github.com/AlexJFDev/Homegrown/wiki)
 ### Features
 - New Ways To Grow Crops
   - On a post*
