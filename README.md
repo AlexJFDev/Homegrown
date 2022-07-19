@@ -44,7 +44,7 @@
   - Cherry Tree (planned)
   - Coconut Palm (planned)
   - Lime Tree (planned)
-  - Bannana Palm (planned)
+  - Banana Palm (planned)
   - Date Palm (planned)
   - Mango Tree (planned)
   - Grapefruit Tree (planned)
