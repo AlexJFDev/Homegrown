@@ -19,7 +19,7 @@ public class Homegrown implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("****Started Initializing Homegrown****");
-		BiomeModifications.addFeature(
+		/*BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
 				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna")), 
 				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna_plateau"))), 
@@ -29,7 +29,7 @@ public class Homegrown implements ModInitializer {
 			BiomeSelectors.includeByKey(
 				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna"))), 
 			Feature.VEGETAL_DECORATION, 
-			RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID,"patch_cantaloupe_river")));
+			RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID,"patch_cantaloupe_river")));*/
 		LOGGER.info("Finished Initializing Homegrown:Miscellaneous");
 		HomegrownBlocks.init();
 		LOGGER.info("Finished Initializing Homegrown:Blocks");
