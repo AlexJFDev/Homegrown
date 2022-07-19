@@ -13,9 +13,9 @@ public class HomegrownItems {
 
 	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.GREEN_TOMATO));
 	public static final Item RED_TOMATO = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.RED_TOMATO));
-	public static final Item TOMATO_SEEDS = new PostCropSeeds(HomegrownBlocks.TOMATO_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN_SEEDS));
-	public static final Item CORN_SEEDS = new AliasedBlockItem(HomegrownBlocks.CORN_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN));
-	public static final Item CORN = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
+	public static final Item TOMATO_SEEDS = new PostCropSeeds(HomegrownBlocks.TOMATO_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
+	public static final Item CORN_SEEDS = new AliasedBlockItem(HomegrownBlocks.CORN_CROP, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN_SEEDS));
+	public static final Item CORN = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN));
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CANTALOUPE_SLICE));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
 

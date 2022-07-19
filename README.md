@@ -1,6 +1,8 @@
 # **Welcome to Homegrown**
-### Version: 0.1.2-beta
+### Version: 0.1.3-beta
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
+### Wiki
+
 ### Features
 - New Ways To Grow Crops
   - On a post*
@@ -59,10 +61,12 @@
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 ### Recommended Mods
 - [Rustic Mod](https://www.curseforge.com/minecraft/mc-mods/rustic)
-### Shout Outs
+### Important Links
 #### [The Fabric Project Discord Server](https://discord.gg/Gg6FGkTEVF)
 A big thank you to the Staff and all the members of the Fabric Project Discord Server. The server members have been a huge source of assistance throughout the development of this mod.
 #### [The-realest-stu's Rustic mod](https://github.com/the-realest-stu/Rustic)
 The Rustic mod was a big source of inspiration for this mod. Features marked with a * were directly inspired by Rustic.
 #### [Mr. Crayfish's Model Creator](https://mrcrayfish.com/tools?id=mc)
-Mr. Crayfish's Model Creator has been very helpful througout the development of this mod for creating block models.
+Mr. Crayfish's Model Creator has been very helpful throughout the development of Homegrown for creating block models.
+#### [My Website alexjf.dev](https://alexjf.dev)
+I would appreciate it if you check out my website. If you are interested in technical information the blog has information about the development of Homegrown.

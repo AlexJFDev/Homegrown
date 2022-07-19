@@ -21,8 +21,9 @@ public class Homegrown implements ModInitializer {
 		LOGGER.info("****Started Initializing Homegrown****");
 		BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
-				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna")), 
-				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna_plateau"))), 
+				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna")),
+				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna_plateau")),
+				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","windswept_savanna"))), 
 			Feature.VEGETAL_DECORATION, 
 			RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID,"patch_cantaloupe")));
 		BiomeModifications.addFeature(
