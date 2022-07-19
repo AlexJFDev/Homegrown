@@ -1,0 +1,246 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "bonus_rolls": 0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:grass",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 2,
+                    "add": false
+                  }
+                ],
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "items": [
+                        "minecraft:shears"
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:group",
+                "children": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:wheat_seeds"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:tomato_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:meadow"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:tomato_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:grove"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:tomato_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:snowy_slopes"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:tomato_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:jagged_peaks"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:tomato_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:frozen_peaks"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:tomato_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:stony_peaks"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:corn_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:badlands"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:corn_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:wooded_badlands"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "homegrown:corn_seeds",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "biome": "minecraft:eroded_badlands"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:tall_grass",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          {
+            "condition": "minecraft:location_check",
+            "offsetY": 1,
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "minecraft:tall_grass"
+                ],
+                "state": {
+                  "half": "upper"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "bonus_rolls": 0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:grass",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 2,
+                    "add": false
+                  }
+                ],
+                "conditions": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "items": [
+                        "minecraft:shears"
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:wheat_seeds",
+                "conditions": [
+                  {
+                    "condition": "minecraft:survives_explosion"
+                  },
+                  {
+                    "condition": "minecraft:random_chance",
+                    "chance": 0.125
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:tall_grass",
+            "properties": {
+              "half": "upper"
+            }
+          },
+          {
+            "condition": "minecraft:location_check",
+            "offsetY": -1,
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "minecraft:tall_grass"
+                ],
+                "state": {
+                  "half": "lower"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

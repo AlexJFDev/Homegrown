@@ -100,6 +100,42 @@
                       }
                     }
                   ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:corn_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:badlands"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:corn_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:wooded_badlands"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "homegrown:corn_seeds",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biome": "minecraft:eroded_badlands"
+                      }
+                    }
+                  ]
                 }
               ]
             }
