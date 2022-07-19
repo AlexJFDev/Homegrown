@@ -43,11 +43,12 @@
     "item.homegrown.tomato_seeds": "Tomato Seeds",
     "item.homegrown.green_tomato": "Green Tomato",
     "item.homegrown.red_tomato": "Red Tomato",
+    "item.homegrown.corn_seeds": "Corn Seeds",
+    "item.homegrown.corn": "Corn",
     "item.homegrown.cantaloupe_seeds": "Cantaloupe Seeds",
     "item.homegrown.cantaloupe_slice": "Cantaloupe Slice",
     "block.homegrown.cantaloupe_block": "Cantaloupe Block",
 
-
-    "itemGroup.homegrown.blocks": "Homegrown:Blocks",
-    "itemGroup.homegrown.items": "Homegrown:Items"
+    "itemGroup.homegrown.blocks": "Homegrown: Blocks",
+    "itemGroup.homegrown.items": "Homegrown: Items"
 }

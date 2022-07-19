@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "homegrown:corn",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.15
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "homegrown:corn",
+              "properties": {
+                "age": "7",
+                "half": "upper"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "homegrown:corn",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "homegrown:corn",
+              "properties": {
+                "age": "7",
+                "half": "upper"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

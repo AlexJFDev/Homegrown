@@ -58,4 +58,91 @@ public enum PostType implements StringIdentifiable{
 	public String asString() {
 		return this.name;
 	}
+
+	public static PostType getPostType(String postIdentifier){
+		switch(postIdentifier){
+			case "homegrown:oak_planks_post":
+				return OAK_PLANKS_POST;
+			case "homegrown:oak_log_post":
+				return OAK_LOG_POST;
+			case "homegrown:stripped_oak_log_post":
+				return STRIPPED_OAK_LOG_POST;
+			case "homegrown:oak_wood_post":
+				return OAK_WOOD_POST;
+			case "homegrown:stripped_oak_wood_post":
+				return STRIPPED_OAK_WOOD_POST;
+			case "homegrown:spruce_planks_post":
+				return SPRUCE_PLANKS_POST;
+			case "homegrown:spruce_log_post":
+				return SPRUCE_LOG_POST;
+			case "homegrown:stripped_spruce_log_post":
+				return STRIPPED_SPRUCE_LOG_POST;
+			case "homegrown:spruce_wood_post":
+				return SPRUCE_WOOD_POST;
+			case "homegrown:stripped_spruce_wood_post":
+				return STRIPPED_SPRUCE_WOOD_POST;
+			case "homegrown:birch_planks_post":
+				return BIRCH_PLANKS_POST;
+			case "homegrown:birch_log_post":
+				return BIRCH_LOG_POST;
+			case "homegrown:stripped_birch_log_post":
+				return STRIPPED_BIRCH_LOG_POST;
+			case "homegrown:birch_wood_post":
+				return BIRCH_WOOD_POST;
+			case "homegrown:stripped_birch_wood_post":
+				return STRIPPED_BIRCH_WOOD_POST;
+			case "homegrown:jungle_planks_post":
+				return JUNGLE_PLANKS_POST;
+			case "homegrown:jungle_log_post":
+				return JUNGLE_LOG_POST;
+			case "homegrown:stripped_jungle_log_post":
+				return STRIPPED_JUNGLE_LOG_POST;
+			case "homegrown:jungle_wood_post":
+				return JUNGLE_WOOD_POST;
+			case "homegrown:stripped_jungle_wood_post":
+				return STRIPPED_JUNGLE_WOOD_POST;
+			case "homegrown:acacia_planks_post":
+				return ACACIA_PLANKS_POST;
+			case "homegrown:acacia_log_post":
+				return ACACIA_LOG_POST;
+			case "homegrown:stripped_acacia_log_post":
+				return STRIPPED_ACACIA_LOG_POST;
+			case "homegrown:acacia_wood_post":
+				return ACACIA_WOOD_POST;
+			case "homegrown:stripped_acacia_wood_post":
+				return STRIPPED_ACACIA_WOOD_POST;
+			case "homegrown:dark_oak_planks_post":
+				return DARK_OAK_PLANKS_POST;
+			case "homegrown:dark_oak_log_post":
+				return DARK_OAK_LOG_POST;
+			case "homegrown:stripped_dark_oak_log_post":
+				return STRIPPED_DARK_OAK_LOG_POST;
+			case "homegrown:dark_oak_wood_post":
+				return DARK_OAK_WOOD_POST;
+			case "homegrown:stripped_dark_oak_wood_post":
+				return STRIPPED_DARK_OAK_WOOD_POST;
+			case "homegrown:crimson_planks_post":
+				return CRIMSON_PLANKS_POST;
+			case "homegrown:crimson_stem_post":
+				return CRIMSON_STEM_POST;
+			case "homegrown:stripped_crimson_stem_post":
+				return STRIPPED_CRIMSON_STEM_POST;
+			case "homegrown:crimson_hyphae_post":
+				return CRIMSON_HYPHAE_POST;
+			case "homegrown:stripped_crimson_hyphae_post":
+				return STRIPPED_CRIMSON_HYPHAE_POST;
+			case "homegrown:warped_planks_post":
+				return WARPED_PLANKS_POST;
+			case "homegrown:warped_stem_post":
+				return WARPED_STEM_POST;
+			case "homegrown:stripped_warped_stem_post":
+				return STRIPPED_WARPED_STEM_POST;
+			case "homegrown:warped_hyphae_post":
+				return WARPED_HYPHAE_POST;
+			case "homegrown:stripped_warped_hyphae_post":
+				return STRIPPED_WARPED_HYPHAE_POST;
+			default:
+				return OAK_LOG_POST;
+		}
+	}
 }
