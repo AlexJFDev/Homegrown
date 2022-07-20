@@ -1,5 +1,5 @@
 {
-  "feature": "homegrown:/test/patch_cantaloupe",
+  "feature": "homegrown:patch_cantaloupe",
   "placement": [
     {
       "chance": 30,
