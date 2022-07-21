@@ -14,9 +14,9 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
@@ -68,6 +68,25 @@ public class TallCropBlock extends CropBlock {
 	}
 
     @Override
+    public void applyGrowth(World world, BlockPos pos, BlockState state) {
+        int i = this.getAge(state) + this.getGrowthAmount(world);
+        int j = this.getMaxAge();
+        if (i > j) {
+           i = j;
+        }
+        
+        if(state.get(HALF) == DoubleBlockHalf.LOWER){
+            world.setBlockState(pos, this.withAge(i), 2);
+            if(i >= 4) {
+                world.setBlockState(pos.up(), this.withAge(i).with(HALF, DoubleBlockHalf.UPPER));
+            }
+        } else {
+            world.setBlockState(pos, this.withAge(i).with(HALF, DoubleBlockHalf.UPPER), 2);
+            world.setBlockState(pos.down(), this.withAge(i));
+        }
+    }
+
+    @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos floorPos) {
         return floor.isOf(Blocks.FARMLAND) || (floor.isOf(this) && floor.get(HALF) == DoubleBlockHalf.UPPER);
 	}
@@ -110,16 +129,6 @@ public class TallCropBlock extends CropBlock {
         if(i >= 4 && doubleBlockHalf == DoubleBlockHalf.LOWER && !ceiling.isOf(this)){
             world.breakBlock(pos, false);
         }
-    }
-
-    @Override
-    public OffsetType getOffsetType() {
-        return OffsetType.XZ;
-    }
-
-    @Override
-    public long getRenderingSeed(BlockState state, BlockPos pos) {
-        return MathHelper.hashCode(pos.getX(), pos.down(state.get(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), pos.getZ());
     }
 
     static {

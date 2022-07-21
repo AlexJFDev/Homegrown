@@ -11,10 +11,11 @@ import net.minecraft.client.render.RenderLayer;
 public class HomegrownClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.TOMATO, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.CORN, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.RICE, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.ATTACHED_CANTALOUPE_STEM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.CANTALOUPE_STEM, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.TOMATO_CROP, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.CORN_CROP, RenderLayer.getCutout());
 
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
 			int i = (Integer)state.get(StemBlock.AGE);

@@ -55,8 +55,9 @@ public class HomegrownBlocks {
 	public static final Block WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	
-	public static final Block TOMATO_CROP = new TomatoBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-	public static final Block CORN_CROP = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block TOMATO = new TomatoBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block CORN = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block RICE = new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block ATTACHED_CANTALOUPE_STEM = new HomegrownAttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
@@ -108,8 +109,9 @@ public class HomegrownBlocks {
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"warped_hyphae_post"), WARPED_HYPHAE_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_warped_hyphae_post"), STRIPPED_WARPED_HYPHAE_POST);
 
-		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"corn"), CORN_CROP);
-		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"tomato"), TOMATO_CROP);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"corn"), CORN);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"rice"), RICE);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"tomato"), TOMATO);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_block"), CANTALOUPE_BLOCK);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_stem"), CANTALOUPE_STEM);

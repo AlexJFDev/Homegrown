@@ -8,4 +8,5 @@ public class HomegrownFoodComponents {
     public static final FoodComponent CANTALOUPE_SLICE = (new FoodComponent.Builder()).hunger(2).saturationModifier(0.3F).build();
     public static final FoodComponent CORN = (new FoodComponent.Builder()).hunger(6).saturationModifier(0.4F).build();
     public static final FoodComponent CORN_SEEDS = (new FoodComponent.Builder()).hunger(1).saturationModifier(0.1F).build();
+    public static final FoodComponent RICE = (new FoodComponent.Builder()).hunger(1).saturationModifier(0.1F).build();
 }
