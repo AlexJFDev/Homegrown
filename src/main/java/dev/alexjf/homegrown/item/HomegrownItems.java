@@ -17,6 +17,7 @@ public class HomegrownItems {
 	public static final Item CORN_SEEDS = new AliasedBlockItem(HomegrownBlocks.CORN, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN_SEEDS));
 	public static final Item CORN = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN));
 	public static final Item RICE = new AliasedBlockItem(HomegrownBlocks.RICE, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CORN_SEEDS));
+	public static final Item BURNING_BUSH_CLIPPINGS = new AliasedBlockItem(HomegrownBlocks.BURNING_BUSH, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CANTALOUPE_SLICE));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
 
@@ -69,6 +70,7 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"corn_seeds"), CORN_SEEDS);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "corn"), CORN);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rice"), RICE);
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "burning_bush_clippings"), BURNING_BUSH_CLIPPINGS);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "cantaloupe_slice"), CANTALOUPE_SLICE);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"cantaloupe_seeds"), CANTALOUPE_SEEDS);
     }
