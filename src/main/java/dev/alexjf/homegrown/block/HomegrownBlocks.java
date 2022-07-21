@@ -3,10 +3,12 @@ package dev.alexjf.homegrown.block;
 import dev.alexjf.homegrown.item.HomegrownItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.AttachedStemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.GourdBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
+import net.minecraft.block.StemBlock;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -59,10 +61,10 @@ public class HomegrownBlocks {
 	public static final Block CORN = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block RICE = new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block ATTACHED_CANTALOUPE_STEM = new HomegrownAttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
+    public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD));
-	public static final Block CANTALOUPE_STEM = new HomegrownStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
+	public static final Block CANTALOUPE_STEM = new StemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
 	
