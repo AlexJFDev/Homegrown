@@ -9,11 +9,15 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.LightType;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 
@@ -37,7 +41,20 @@ public class BurningBushBlock extends TallCropBlock {
         } else {
             world.setBlockState(pos, (BlockState)state.with(DORMANT, Dormant.TRUE), 2);
         }
-        
+    }
+
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        world.createAndScheduleBlockTick(pos, this, 1);
+        if(state.canPlaceAt(world, pos)){
+            if(state.get(HALF) == DoubleBlockHalf.UPPER){
+                BlockState floor = world.getBlockState(pos.down());
+                return state.with(AGE, floor.get(AGE)).with(DORMANT, floor.get(DORMANT));
+            }
+        } else {
+            return Blocks.AIR.getDefaultState();
+        }
+        return state;
     }
 
     private static boolean isWaterNearby(WorldView world, BlockPos pos) {
@@ -53,7 +70,7 @@ public class BurningBushBlock extends TallCropBlock {
         } while(!world.getFluidState(blockPos).isIn(FluidTags.WATER));
   
         return true;
-     }
+    }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

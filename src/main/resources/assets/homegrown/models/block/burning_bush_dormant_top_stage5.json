@@ -1,0 +1,6 @@
+{
+    "parent": "homegrown:block/fixed_cross",
+    "textures": {
+      "cross": "homegrown:block/burning_bush_dormant_top_stage5"
+    }
+  }
