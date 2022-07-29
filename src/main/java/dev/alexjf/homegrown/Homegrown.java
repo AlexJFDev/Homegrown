@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dev.alexjf.homegrown.block.HomegrownBlocks;
-import dev.alexjf.homegrown.features.HomegrownFeatures;
+import dev.alexjf.homegrown.feature.HomegrownFeatures;
 import dev.alexjf.homegrown.item.HomegrownItems;
 import net.fabricmc.api.ModInitializer;
 

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "homegrown:item/rice"
+      "layer0": "homegrown:item/burning_bush_clippings"
     }
 }

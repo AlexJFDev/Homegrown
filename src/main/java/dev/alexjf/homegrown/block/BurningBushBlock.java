@@ -58,7 +58,7 @@ public class BurningBushBlock extends TallCropBlock {
     }
 
     private static boolean isWaterNearby(WorldView world, BlockPos pos) {
-        Iterator var2 = BlockPos.iterate(pos.add(-4, 0, -4), pos.add(4, -1, 4)).iterator();
+        Iterator<BlockPos> var2 = BlockPos.iterate(pos.add(-4, 0, -4), pos.add(4, -1, 4)).iterator();
   
         BlockPos blockPos;
         do {

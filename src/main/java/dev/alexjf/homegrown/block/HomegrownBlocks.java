@@ -60,6 +60,7 @@ public class HomegrownBlocks {
 	public static final Block TOMATO = new TomatoBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CORN = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block RICE = new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block WILD_RICE = new WildRiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block BURNING_BUSH = new BurningBushBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
@@ -115,6 +116,7 @@ public class HomegrownBlocks {
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"tomato"), TOMATO);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"corn"), CORN);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"rice"), RICE);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"wild_rice"), WILD_RICE);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"burning_bush"), BURNING_BUSH);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_block"), CANTALOUPE_BLOCK);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);

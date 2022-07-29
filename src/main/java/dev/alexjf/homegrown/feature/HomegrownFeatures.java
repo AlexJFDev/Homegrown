@@ -1,4 +1,4 @@
-package dev.alexjf.homegrown.features;
+package dev.alexjf.homegrown.feature;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -23,5 +23,10 @@ public class HomegrownFeatures {
 				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","river"))), 
 			Feature.VEGETAL_DECORATION,
 			HomegrownPlacedFeatures.PATCH_CANTALOUPE_RIVER.getKey().get());
+		
+		BiomeModifications.addFeature(
+			BiomeSelectors.all(), 
+			Feature.VEGETAL_DECORATION,
+			HomegrownPlacedFeatures.PATCH_RICE.getKey().get());
     }
 }

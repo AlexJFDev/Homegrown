@@ -87,10 +87,7 @@ public class TallCropBlock extends CropBlock {
         }
     }
 
-    @Override
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos floorPos) {
-        return floor.isOf(Blocks.FARMLAND) || (floor.isOf(this) && floor.get(HALF) == DoubleBlockHalf.UPPER);
-	}
+    
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
