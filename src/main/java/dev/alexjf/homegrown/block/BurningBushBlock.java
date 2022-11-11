@@ -30,14 +30,16 @@ public class BurningBushBlock extends TallCropBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+        return floor.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || floor.isIn(BlockTags.DIRT) || floor.isOf(Blocks.CLAY);
     }
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (isWaterNearby(world, pos) && world.getLightLevel(LightType.SKY, pos) == 0) {
+        if (state.get(HALF) == DoubleBlockHalf.LOWER && isWaterNearby(world, pos) && world.getLightLevel(LightType.SKY, pos) == 0) {
             world.setBlockState(pos, (BlockState)state.with(DORMANT, Dormant.FALSE), 2);
             super.randomTick(state, world, pos, random);
+        } else if (world.getBlockState(pos.down()).isOf(HomegrownBlocks.BURNING_BUSH) && world.getBlockState(pos.down()).get(DORMANT) == Dormant.FALSE) {
+            world.setBlockState(pos, (BlockState)state.with(DORMANT, Dormant.FALSE), 2);
         } else {
             world.setBlockState(pos, (BlockState)state.with(DORMANT, Dormant.TRUE), 2);
         }
