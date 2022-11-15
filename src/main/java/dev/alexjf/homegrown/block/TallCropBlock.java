@@ -44,25 +44,25 @@ public class TallCropBlock extends CropBlock {
         }
     }
 
-    // This could potentially cause lag. It needs looking into.
     @Override
     public boolean hasRandomTicks(BlockState state) {
-        return state.get(HALF) == DoubleBlockHalf.LOWER;
+        if (state.get(HALF) == DoubleBlockHalf.UPPER) return false;
+        if (this.isMature(state)) return false;
+        return true;
     }
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        DoubleBlockHalf doubleBlockHalf = (DoubleBlockHalf)state.get(HALF);
         if (world.getBaseLightLevel(pos, 0) >= 9) {
             float f;
             f = getAvailableMoisture(this, world, pos);
             if (random.nextInt((int)(25.0F / f) + 1) == 0){
                 int i = this.getAge(state);
-                if(i + 1 >= 4) {
-                    world.setBlockState(pos.up(), this.withAge(i).with(HALF, DoubleBlockHalf.UPPER));
-                }
                 if (i < this.getMaxAge()) {
-                    world.setBlockState(pos, this.withAge(i + 1).with(HALF, doubleBlockHalf), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos, state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
+                    if (i + 1 >= 4) {
+                        world.setBlockState(pos.up(), state.with(HALF, DoubleBlockHalf.UPPER).with(AGE, i + 1));
+                    }
                 }
             }
 		}
@@ -77,56 +77,48 @@ public class TallCropBlock extends CropBlock {
         }
         
         if(state.get(HALF) == DoubleBlockHalf.LOWER){
-            world.setBlockState(pos, this.withAge(i), 2);
+            world.setBlockState(pos, state.with(AGE, i), 2);
             if(i >= 4) {
-                world.setBlockState(pos.up(), this.withAge(i).with(HALF, DoubleBlockHalf.UPPER));
+                world.setBlockState(pos.up(), state.with(AGE, i).with(HALF, DoubleBlockHalf.UPPER));
             }
         } else {
-            world.setBlockState(pos, this.withAge(i).with(HALF, DoubleBlockHalf.UPPER), 2);
-            world.setBlockState(pos.down(), this.withAge(i));
+            world.setBlockState(pos, state.with(AGE, i), 2);
+            world.setBlockState(pos.down(), state.with(AGE, i).with(HALF, DoubleBlockHalf.LOWER));
         }
     }
-
-    
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         DoubleBlockHalf doubleBlockHalf = state.get(HALF);
-        if (doubleBlockHalf == DoubleBlockHalf.UPPER) {
-           BlockState floor = world.getBlockState(pos.down());
-           return floor.isOf(this) && floor.get(HALF) == DoubleBlockHalf.LOWER;
-        } else {
+        BlockState floor = world.getBlockState(pos.down());
+        if (doubleBlockHalf == DoubleBlockHalf.LOWER) {
+            if (!canPlantOnTop(floor, world, pos)) return false;
             BlockState ceiling = world.getBlockState(pos.up());
-            if(ceiling.isAir() || ceiling.isOf(this)){
-                return super.canPlaceAt(state, world, pos);
+            if (state.get(AGE) >= 4){
+                if (!ceiling.isOf(this)) return false;
             } else {
-                return false;
+                if (!ceiling.isAir()) return false;
             }
+        } else {
+            if (!floor.isOf(this)) return false;
+            if (floor.get(HALF) != DoubleBlockHalf.LOWER) return false;
         }
+        return true;
     }
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         world.createAndScheduleBlockTick(pos, this, 1);
-        if(state.canPlaceAt(world, pos)){
-            if(state.get(HALF) == DoubleBlockHalf.UPPER){
-                BlockState floor = world.getBlockState(pos.down());
-                return state.with(AGE, floor.get(AGE));
-            }
-        } else {
-            return Blocks.AIR.getDefaultState();
-        }
-        return state;
+
+        if (!this.canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
+        if (state.get(HALF) == DoubleBlockHalf.LOWER) return state;
+        BlockState floor = world.getBlockState(pos.down());
+        return floor.with(HALF, DoubleBlockHalf.UPPER);
     }
 
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        BlockState ceiling = world.getBlockState(pos.up());
-        DoubleBlockHalf doubleBlockHalf = state.get(HALF);
-        int i = state.get(AGE);
-        if(i >= 4 && doubleBlockHalf == DoubleBlockHalf.LOWER && !ceiling.isOf(this)){
-            world.breakBlock(pos, false);
-        }
+        if (!this.canPlaceAt(state, world, pos)) world.breakBlock(pos, false);
     }
 
     static {

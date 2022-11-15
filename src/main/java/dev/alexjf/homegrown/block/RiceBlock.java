@@ -23,7 +23,7 @@ public class RiceBlock extends TallCropBlock implements FluidFillable{
 
     @Override
 	protected ItemConvertible getSeedsItem() {
-		return HomegrownItems.RICE;
+		return HomegrownItems.BROWN_RICE;
 	}
 
     @Override

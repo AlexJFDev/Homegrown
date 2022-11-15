@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import dev.alexjf.homegrown.block.HomegrownBlocks;
 import dev.alexjf.homegrown.feature.HomegrownFeatures;
 import dev.alexjf.homegrown.item.HomegrownItems;
+import dev.alexjf.homegrown.loot.condition.HomegrownLootConditionTypes;
 import net.fabricmc.api.ModInitializer;
 
 public class Homegrown implements ModInitializer {
@@ -28,6 +29,7 @@ public class Homegrown implements ModInitializer {
 			Feature.VEGETAL_DECORATION, 
 			RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID,"patch_cantaloupe_river")));*/
 		HomegrownFeatures.init();
+		HomegrownLootConditionTypes.init();
 		LOGGER.info("Finished Initializing Homegrown:Miscellaneous");
 		HomegrownBlocks.init();
 		LOGGER.info("Finished Initializing Homegrown:Blocks");

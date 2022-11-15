@@ -1,0 +1,211 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "homegrown:burning_buds"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "homegrown:random_chance_with_fortune",
+          "chance": 0.20,
+          "fortune_multiplier": 0.33333
+        },
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "tag": "minecraft:shears"
+          }
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "homegrown:burning_bush",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 3
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "7"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 2
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "6"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 2
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "5"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 2
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "3"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "2"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "homegrown:burning_bush_clippings",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 0
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "homegrown:burning_bush",
+                  "properties": {
+                    "age": "0"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "tag": "minecraft:shears"
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ]
+}

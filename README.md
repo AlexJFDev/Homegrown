@@ -7,9 +7,7 @@ The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Home
 - New Ways To Grow Crops
   - On a post*
   - On a trellis (planned)
-  - Underwater (planned)
-  - In the Nether (planned)
-  - In the End (planned)
+  - Underwater
 - New Crops
   - Post & Trellis Crops
     - Tomato
@@ -17,9 +15,9 @@ The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Home
     - Chillies (planned)
     - Cucumber (planned)
   - Standard Crops
-    - Corn (grows tall)
-    - Redgrass (planned)
-    - Rice (planned)
+    - Corn
+    - Burning Bush
+    - Rice
     - Onions (planned)
     - Garlic (planned)
     - Pineapple (planned)
@@ -56,7 +54,7 @@ The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Home
     - Rack (planned)
   - Cooking/Baking (planned)
     - A Brick Oven that is placed over a fire (planned)
-- Lots of new food recipies (planned)
+- Lots of new food recipes (planned)
 ### Dependencies
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 ### Recommended Mods
@@ -65,7 +63,7 @@ The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Home
 #### [The Fabric Project Discord Server](https://discord.gg/Gg6FGkTEVF)
 A big thank you to the Staff and all the members of the Fabric Project Discord Server. The server members have been a huge source of assistance throughout the development of this mod.
 #### [The-realest-stu's Rustic mod](https://github.com/the-realest-stu/Rustic)
-The Rustic mod was a big source of inspiration for this mod. Features marked with a * were directly inspired by Rustic.
+The Rustic mod was a big source of inspiration for Homegrown. Features marked with a * are closely inspired by Rustic.
 #### [Mr. Crayfish's Model Creator](https://mrcrayfish.com/tools?id=mc)
 Mr. Crayfish's Model Creator has been very helpful throughout the development of Homegrown for creating block models.
 #### [My Website alexjf.dev](https://alexjf.dev)
