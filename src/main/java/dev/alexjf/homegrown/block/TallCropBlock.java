@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
@@ -22,26 +23,27 @@ import net.minecraft.world.WorldView;
 
 public class TallCropBlock extends CropBlock {
     public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
-    private static final VoxelShape[] LOWER_AGE_TO_SHAPE;
-    private static final VoxelShape[] UPPER_AGE_TO_SHAPE;
+    private static final VoxelShape[] LOWER_AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
+    private static final VoxelShape[] UPPER_AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 
     public TallCropBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(HALF, DoubleBlockHalf.LOWER));
     }
 
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(HALF);
-        super.appendProperties(builder);
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        if (state.get(HALF) == DoubleBlockHalf.LOWER) return LOWER_AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
+        return UPPER_AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if(state.get(HALF) == DoubleBlockHalf.LOWER){
-            return LOWER_AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
-        } else {
-            return UPPER_AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
-        }
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        world.createAndScheduleBlockTick(pos, this, 1);
+
+        if (!this.canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
+        if (state.get(HALF) == DoubleBlockHalf.LOWER) return state;
+        BlockState floor = world.getBlockState(pos.down());
+        return floor.with(HALF, DoubleBlockHalf.UPPER);
     }
 
     @Override
@@ -107,22 +109,18 @@ public class TallCropBlock extends CropBlock {
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        world.createAndScheduleBlockTick(pos, this, 1);
-
-        if (!this.canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
-        if (state.get(HALF) == DoubleBlockHalf.LOWER) return state;
-        BlockState floor = world.getBlockState(pos.down());
-        return floor.with(HALF, DoubleBlockHalf.UPPER);
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (!world.isClient) {
+            if (!player.isCreative()) {
+                TallCropBlock.dropStacks(state, world, pos, null, player, player.getMainHandStack());
+            }
+        }
+        super.onBreak(world, pos, state, player);
     }
 
     @Override
-    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (!this.canPlaceAt(state, world, pos)) world.breakBlock(pos, false);
-    }
-
-    static {
-        LOWER_AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
-        UPPER_AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(HALF);
+        super.appendProperties(builder);
     }
 }
