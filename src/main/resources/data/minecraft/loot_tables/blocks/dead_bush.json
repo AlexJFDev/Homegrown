@@ -45,7 +45,7 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "name": "homegrown:corn_seeds",
+                    "name": "homegrown:corn_kernels",
                     "conditions": [
                       {
                         "condition": "minecraft:location_check",
@@ -57,7 +57,7 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "name": "homegrown:corn_seeds",
+                    "name": "homegrown:corn_kernels",
                     "conditions": [
                       {
                         "condition": "minecraft:location_check",
@@ -69,7 +69,7 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "name": "homegrown:corn_seeds",
+                    "name": "homegrown:corn_kernels",
                     "conditions": [
                       {
                         "condition": "minecraft:location_check",

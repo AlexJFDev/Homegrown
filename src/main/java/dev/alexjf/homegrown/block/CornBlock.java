@@ -29,7 +29,7 @@ public class CornBlock extends TallCropBlock {
     
     @Override
 	protected ItemConvertible getSeedsItem() {
-		return HomegrownItems.CORN_SEEDS;
+		return HomegrownItems.CORN_KERNELS;
 	}
 
     @Override

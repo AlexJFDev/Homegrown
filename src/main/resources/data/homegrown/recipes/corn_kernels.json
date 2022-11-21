@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "item": "homegrown:corn"
+        "item": "homegrown:corn_ear"
       }
     ],
     "result": {
-      "item": "homegrown:corn_seeds",
+      "item": "homegrown:corn_kernels",
       "count": 3
     }
   }

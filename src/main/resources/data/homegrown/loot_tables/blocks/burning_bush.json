@@ -2,37 +2,100 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
-      "bonus_rolls": 0,
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone"
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2.0,
+              "add": false
+            }
+          ],
+          "name": "homegrown:burning_bush_clippings"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
           "predicate": {
-            "tag": "minecraft:shears"
+            "items": [
+              "minecraft:shears"
+            ]
           }
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "homegrown:burning_bush",
+          "properties": {
+            "half": "lower"
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": [
+                "homegrown:burning_bush"
+              ],
+              "state": {
+                "half": "upper"
+              }
+            }
+          },
+          "offsetY": 1
         }
       ]
     },
     {
-      "rolls": 1,
-      "bonus_rolls": 0,
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:dirt"
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2.0,
+              "add": false
+            }
+          ],
+          "name": "homegrown:burning_bush_clippings"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": [
+              "minecraft:shears"
+            ]
+          }
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "homegrown:burning_bush",
+          "properties": {
+            "half": "upper"
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": [
+                "homegrown:burning_bush"
+              ],
+              "state": {
+                "half": "lower"
+              }
+            }
+          },
+          "offsetY": -1
         }
       ]
-    }
-  ],
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
     }
   ]
 }
