@@ -61,6 +61,8 @@ The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Home
 ### Recommended Mods
 - [Rustic Mod](https://www.curseforge.com/minecraft/mc-mods/rustic)
 ### Important Links
+#### [The Homegrown Discord Server](https://discord.gg/xZdDpGTCAh)
+This is the official discord server for homegrown. You can suggest features here.
 #### [The Fabric Project Discord Server](https://discord.gg/Gg6FGkTEVF)
 A big thank you to the Staff and all the members of the Fabric Project Discord Server. The server members have been a huge source of assistance throughout the development of this mod.
 #### [The-realest-stu's Rustic mod](https://github.com/the-realest-stu/Rustic)
