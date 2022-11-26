@@ -1,0 +1,16 @@
+{
+    "variants": {
+      "axis=x": {
+        "model": "homegrown:block/burning_bale_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      "axis=y": {
+        "model": "homegrown:block/burning_bale"
+      },
+      "axis=z": {
+        "model": "homegrown:block/burning_bale_horizontal",
+        "x": 90
+      }
+    }
+  }

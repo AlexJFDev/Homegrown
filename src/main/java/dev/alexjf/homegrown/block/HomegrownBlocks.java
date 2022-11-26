@@ -6,6 +6,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AttachedStemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.GourdBlock;
+import net.minecraft.block.HayBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.block.StemBlock;
@@ -15,7 +16,7 @@ import net.minecraft.util.registry.Registry;
 
 public class HomegrownBlocks {
     static String MOD_ID = "homegrown";
-    
+	// Post Blocks
     public static final Block OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
@@ -56,7 +57,7 @@ public class HomegrownBlocks {
 	public static final Block STRIPPED_WARPED_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	
+	// Crop Blocks
 	public static final Block TOMATO = new TomatoBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block CORN = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 	public static final Block RICE = new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
@@ -69,9 +70,12 @@ public class HomegrownBlocks {
 	public static final Block CANTALOUPE_STEM = new StemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
+	// Miscellaneous Blocks
+	public static final Block BURNING_BALE = new HayBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC, MapColor.RED).strength(0.5f).sounds(BlockSoundGroup.GRASS));
 	
 
     public static void init(){
+		// Post Blocks
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"oak_planks_post"), OAK_PLANKS_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"oak_log_post"), OAK_LOG_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_oak_log_post"), STRIPPED_OAK_LOG_POST);
@@ -112,7 +116,7 @@ public class HomegrownBlocks {
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_warped_stem_post"), STRIPPED_WARPED_STEM_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"warped_hyphae_post"), WARPED_HYPHAE_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_warped_hyphae_post"), STRIPPED_WARPED_HYPHAE_POST);
-
+		// Crop Blocks
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"tomato"), TOMATO);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"corn"), CORN);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"rice"), RICE);
@@ -121,5 +125,7 @@ public class HomegrownBlocks {
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_block"), CANTALOUPE_BLOCK);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"cantaloupe_stem"), CANTALOUPE_STEM);
+		// Miscellaneous Blocks
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "burning_bale"), BURNING_BALE);
     }
 }

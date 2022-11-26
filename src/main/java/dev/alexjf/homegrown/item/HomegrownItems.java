@@ -23,6 +23,7 @@ public class HomegrownItems {
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
 
     public static void init(){
+		// Post Items
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "oak_planks_post"), new BlockItem(HomegrownBlocks.OAK_PLANKS_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "oak_log_post"), new BlockItem(HomegrownBlocks.OAK_LOG_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_oak_log_post"), new BlockItem(HomegrownBlocks.STRIPPED_OAK_LOG_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
@@ -64,7 +65,7 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_warped_stem_post"), new BlockItem(HomegrownBlocks.STRIPPED_WARPED_STEM_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "warped_hyphae_post"), new BlockItem(HomegrownBlocks.WARPED_HYPHAE_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_warped_hyphae_post"), new BlockItem(HomegrownBlocks.STRIPPED_WARPED_HYPHAE_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
-
+		// Crop Items
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "red_tomato"), RED_TOMATO);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "green_tomato"), GREEN_TOMATO);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"tomato_seeds"), TOMATO_SEEDS);
@@ -75,5 +76,7 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "burning_buds"), BURNING_BUDS);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "cantaloupe_slice"), CANTALOUPE_SLICE);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"cantaloupe_seeds"), CANTALOUPE_SEEDS);
+		// Miscellaneous Items
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "burning_bale"), new BlockItem(HomegrownBlocks.BURNING_BALE, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
     }
 }

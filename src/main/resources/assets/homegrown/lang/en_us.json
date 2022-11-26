@@ -52,6 +52,8 @@
     "item.homegrown.cantaloupe_slice": "Cantaloupe Slice",
     "block.homegrown.cantaloupe_block": "Cantaloupe Block",
 
+    "block.homegrown.burning_bale": "Burning Bale",
+
     "itemGroup.homegrown.blocks": "Homegrown: Blocks",
     "itemGroup.homegrown.items": "Homegrown: Items"
 }

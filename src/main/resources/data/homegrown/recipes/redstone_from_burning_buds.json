@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "homegrown:burning_buds"
+      }
+    ],
+    "result": {
+      "item": "minecraft:redstone",
+      "count": 1
+    }
+  }

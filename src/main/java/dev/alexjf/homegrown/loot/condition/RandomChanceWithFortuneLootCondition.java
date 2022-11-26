@@ -6,8 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import java.util.Set;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.context.LootContext;
@@ -34,15 +33,15 @@ implements LootCondition {
 
     @Override
     public Set<LootContextParameter<?>> getRequiredParameters() {
-        return ImmutableSet.of(LootContextParameters.KILLER_ENTITY);
+        return ImmutableSet.of(LootContextParameters.TOOL);
     }
 
     @Override
     public boolean test(LootContext lootContext) {
-        Entity entity = lootContext.get(LootContextParameters.KILLER_ENTITY);
+        ItemStack itemStack = lootContext.get(LootContextParameters.TOOL);
         int i = 0;
-        if (entity instanceof LivingEntity) {
-            i = EnchantmentHelper.getEquipmentLevel(Enchantments.FORTUNE, (LivingEntity) entity);
+        if (itemStack != null) {
+            i = EnchantmentHelper.getLevel(Enchantments.FORTUNE, itemStack);
         }
         return lootContext.getRandom().nextFloat() < this.chance + (float)i * this.fortuneMultiplier;
     }
@@ -56,7 +55,7 @@ implements LootCondition {
         @Override
         public void toJson(JsonObject jsonObject, RandomChanceWithFortuneLootCondition randomChanceWithFortuneLootCondition, JsonSerializationContext jsonSerializationContext) {
             jsonObject.addProperty("chance", Float.valueOf(randomChanceWithFortuneLootCondition.chance));
-            jsonObject.addProperty("looting_multiplier", Float.valueOf(randomChanceWithFortuneLootCondition.fortuneMultiplier));
+            jsonObject.addProperty("fortune_multiplier", Float.valueOf(randomChanceWithFortuneLootCondition.fortuneMultiplier));
         }
 
         @Override
