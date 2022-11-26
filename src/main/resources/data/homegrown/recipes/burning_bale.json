@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "homegrown:burning_bush_clippings"
+      }
+    },
+    "result": {
+      "item": "homegrown:burning_bale"
+    }
+  }

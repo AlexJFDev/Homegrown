@@ -1,5 +1,5 @@
 # **Welcome to Homegrown**
-### Version: 0.1.4-beta
+### Version: 0.1.5-beta
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Wiki
 The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Homegrown/wiki](https://github.com/AlexJFDev/Homegrown/wiki)
@@ -10,21 +10,22 @@ The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Home
   - Underwater
 - New Crops
   - Post & Trellis Crops
-    - Tomato
+    - [Tomato](https://github.com/AlexJFDev/Homegrown/wiki/Crops#tomato)
     - Green Beans (planned)
     - Chillies (planned)
     - Cucumber (planned)
   - Standard Crops
-    - Corn
-    - Burning Bush
-    - Rice
     - Onions (planned)
     - Garlic (planned)
     - Pineapple (planned)
+  - Tall Crops
+    - [Corn](https://github.com/AlexJFDev/Homegrown/wiki/Crops#corn)
+    - [Burning Bush](https://github.com/AlexJFDev/Homegrown/wiki/Crops#burning-bush)
   - Gourds
-    - Cantaloupe
+    - [Cantaloupe](https://github.com/AlexJFDev/Homegrown/wiki/Crops#cantaloupe)
     - Squash (planned)
   - Underwater (planned)
+    - [Rice](https://github.com/AlexJFDev/Homegrown/wiki/Crops#rice)
   - Nether Crops (planned)
   - End Crops (planned)
 - Berry Bushes (planned)
