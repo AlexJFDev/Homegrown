@@ -1,7 +1,5 @@
 package dev.alexjf.homegrown.block;
 
-import java.util.Random;
-
 import dev.alexjf.homegrown.block.enums.PostType;
 import dev.alexjf.homegrown.state.property.HomegrownProperties;
 import net.minecraft.block.Block;
@@ -14,6 +12,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;

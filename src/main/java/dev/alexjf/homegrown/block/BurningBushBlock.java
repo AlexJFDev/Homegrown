@@ -1,7 +1,6 @@
 package dev.alexjf.homegrown.block;
 
 import java.util.Iterator;
-import java.util.Random;
 
 import dev.alexjf.homegrown.block.enums.Dormant;
 import dev.alexjf.homegrown.item.HomegrownItems;
@@ -17,6 +16,7 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.LightType;
 import net.minecraft.world.WorldView;
@@ -91,11 +91,6 @@ public class BurningBushBlock extends TallCropBlock {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(DORMANT);
         super.appendProperties(builder);
-    }
-
-    @Override
-    public OffsetType getOffsetType() {
-        return OffsetType.XZ;
     }
 
     @Override

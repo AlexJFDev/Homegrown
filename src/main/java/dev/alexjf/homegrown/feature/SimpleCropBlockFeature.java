@@ -1,7 +1,5 @@
 package dev.alexjf.homegrown.feature;
 
-import java.util.Random;
-
 import com.mojang.serialization.Codec;
 
 import dev.alexjf.homegrown.block.TallCropBlock;
@@ -9,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
