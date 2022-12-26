@@ -1,5 +1,5 @@
 # **Welcome to Homegrown**
-### Version: 0.1.5-beta
+### Version: 0.1.6-beta
 ## This Mod adds new crops and features which are meant to fit right in with Vanilla Minecraft.
 ### Wiki
 The Homegrown wiki can be found at this link: [https://github.com/AlexJFDev/Homegrown/wiki](https://github.com/AlexJFDev/Homegrown/wiki)
