@@ -16,6 +16,7 @@ public class HomegrownClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.RICE, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.WILD_RICE, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.BURNING_BUSH, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.BLUEBERRY_BUSH, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.ATTACHED_CANTALOUPE_STEM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(HomegrownBlocks.CANTALOUPE_STEM, RenderLayer.getCutout());
 

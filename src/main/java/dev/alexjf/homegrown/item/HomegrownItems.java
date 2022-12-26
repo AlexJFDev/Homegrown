@@ -21,6 +21,7 @@ public class HomegrownItems {
 	public static final Item BURNING_BUDS = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP));
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.CANTALOUPE_SLICE));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP));
+	public static final Item BLUEBERRIES = new AliasedBlockItem(HomegrownBlocks.BLUEBERRY_BUSH, new Item.Settings().group(HomegrownItemGroup.ITEM_GROUP).food(HomegrownFoodComponents.BLUEBERRIES));
 
     public static void init(){
 		// Post Items
@@ -76,6 +77,7 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "burning_buds"), BURNING_BUDS);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "cantaloupe_slice"), CANTALOUPE_SLICE);
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"cantaloupe_seeds"), CANTALOUPE_SEEDS);
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID,"blueberries"), BLUEBERRIES);
 		// Miscellaneous Items
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "burning_bale"), new BlockItem(HomegrownBlocks.BURNING_BALE, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
     }

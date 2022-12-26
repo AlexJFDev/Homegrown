@@ -38,13 +38,10 @@ public class PostCropBlock extends CropBlock {
 		return TYPE;
 	}
 
-	public static float getAvailableMoisture(Block block, BlockView world, BlockPos pos){
+	protected static float getAvailableMoisture(Block block, BlockView world, BlockPos pos){
         BlockPos floor = pos.down();
-        if(world.getBlockState(floor).isOf(Blocks.FARMLAND)){
-            return CropBlock.getAvailableMoisture(block, world, pos);
-        } else {
-            return PostCropBlock.getAvailableMoisture(block, world, floor, 0);
-        }
+        if(world.getBlockState(floor).isOf(Blocks.FARMLAND)) return CropBlock.getAvailableMoisture(block, world, pos);
+        return PostCropBlock.getAvailableMoisture(block, world, floor, 0);
     }
 
 	public static float getAvailableMoisture(Block block, BlockView world, BlockPos pos, int depth){
