@@ -33,6 +33,13 @@ public enum PostType implements StringIdentifiable{
 	ACACIA_WOOD_POST("acacia_wood_post"),
 	STRIPPED_ACACIA_LOG_POST("stripped_acacia_log_post"),
     STRIPPED_ACACIA_WOOD_POST("stripped_acacia_wood_post"),
+	
+	MANGROVE_LOG_POST("mangrove_log_post"),
+	MANGROVE_PLANKS_POST("mangrove_planks_post"),
+	MANGROVE_WOOD_POST("mangrove_wood_post"),
+	STRIPPED_MANGROVE_LOG_POST("stripped_mangrove_log_post"),
+    STRIPPED_MANGROVE_WOOD_POST("stripped_mangrove_wood_post"),
+	
 	WARPED_STEM_POST("warped_stem_post"),
 	WARPED_PLANKS_POST("warped_planks_post"),
 	WARPED_HYPHAE_POST("warped_hyphae_post"),
@@ -121,6 +128,18 @@ public enum PostType implements StringIdentifiable{
 				return DARK_OAK_WOOD_POST;
 			case "homegrown:stripped_dark_oak_wood_post":
 				return STRIPPED_DARK_OAK_WOOD_POST;
+			
+			case "homegrown:mangrove_planks_post":
+				return MANGROVE_PLANKS_POST;
+			case "homegrown:mangrove_log_post":
+				return MANGROVE_LOG_POST;
+			case "homegrown:stripped_mangrove_log_post":
+				return STRIPPED_MANGROVE_LOG_POST;
+			case "homegrown:mangrove_wood_post":
+				return MANGROVE_WOOD_POST;
+			case "homegrown:stripped_mangrove_wood_post":
+				return STRIPPED_MANGROVE_WOOD_POST;
+
 			case "homegrown:crimson_planks_post":
 				return CRIMSON_PLANKS_POST;
 			case "homegrown:crimson_stem_post":

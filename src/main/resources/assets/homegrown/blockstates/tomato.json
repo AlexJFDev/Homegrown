@@ -305,6 +305,46 @@
         }
     },
     {
+      "when": {
+        "type": "mangrove_log_post"
+      },
+      "apply": {
+        "model": "homegrown:block/mangrove_log_post"
+      }
+    },
+    {
+      "when": {
+        "type": "mangrove_planks_post"
+      },
+      "apply": {
+        "model": "homegrown:block/mangrove_planks_post"
+      }
+    },
+    {
+      "when": {
+        "type": "mangrove_wood_post"
+      },
+      "apply": {
+        "model": "homegrown:block/mangrove_wood_post"
+      }
+    },
+    {
+      "when": {
+        "type": "stripped_mangrove_log_post"
+      },
+      "apply": {
+        "model": "homegrown:block/stripped_mangrove_log_post"
+      }
+    },
+    {
+      "when": {
+        "type": "stripped_mangrove_wood_post"
+      },
+      "apply": {
+        "model": "homegrown:block/stripped_mangrove_wood_post"
+      }
+    },
+    {
         "apply": {
             "model": "homegrown:block/crimson_planks_post"
         },

@@ -55,6 +55,13 @@ public class HomegrownItems {
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_dark_oak_log_post"), new BlockItem(HomegrownBlocks.STRIPPED_DARK_OAK_LOG_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_oak_wood_post"), new BlockItem(HomegrownBlocks.DARK_OAK_WOOD_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_dark_oak_wood_post"), new BlockItem(HomegrownBlocks.STRIPPED_DARK_OAK_WOOD_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
+		
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mangrove_planks_post"), new BlockItem(HomegrownBlocks.MANGROVE_PLANKS_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mangrove_log_post"), new BlockItem(HomegrownBlocks.MANGROVE_LOG_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_mangrove_log_post"), new BlockItem(HomegrownBlocks.STRIPPED_MANGROVE_LOG_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mangrove_wood_post"), new BlockItem(HomegrownBlocks.MANGROVE_WOOD_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_mangrove_wood_post"), new BlockItem(HomegrownBlocks.STRIPPED_MANGROVE_WOOD_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
+		
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "crimson_planks_post"), new BlockItem(HomegrownBlocks.CRIMSON_PLANKS_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "crimson_stem_post"), new BlockItem(HomegrownBlocks.CRIMSON_STEM_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_crimson_stem_post"), new BlockItem(HomegrownBlocks.STRIPPED_CRIMSON_STEM_POST, new FabricItemSettings().group(HomegrownItemGroup.BLOCK_GROUP)));

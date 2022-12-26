@@ -33,8 +33,8 @@ public class PostBlock extends Block {
         ItemStack stack = player.getMainHandStack();
 		if (!stack.isEmpty() && stack.getItem() instanceof PostCropSeeds && world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) {
             String postIdentifier = Registry.BLOCK.getId(world.getBlockState(pos).getBlock()).toString();
-            BlockState cropBlockstate = ((PostCropSeeds) stack.getItem()).getCrop();
-			world.setBlockState(pos, cropBlockstate.with(PostCropBlock.TYPE, PostType.getPostType(postIdentifier)));
+            BlockState cropBlockState = ((PostCropSeeds) stack.getItem()).getCrop();
+			world.setBlockState(pos, cropBlockState.with(PostCropBlock.TYPE, PostType.getPostType(postIdentifier)));
             if (!player.isCreative()) {
 				stack.decrement(1);
 			}
@@ -105,6 +105,18 @@ public class PostBlock extends Block {
 				return HomegrownBlocks.DARK_OAK_WOOD_POST.getDefaultState();
 			case "homegrown:stripped_dark_oak_wood_post":
 				return HomegrownBlocks.STRIPPED_DARK_OAK_WOOD_POST.getDefaultState();
+			
+			case "homegrown:mangrove_planks_post":
+				return HomegrownBlocks.MANGROVE_PLANKS_POST.getDefaultState();
+			case "homegrown:mangrove_log_post":
+				return HomegrownBlocks.MANGROVE_LOG_POST.getDefaultState();
+			case "homegrown:stripped_mangrove_log_post":
+				return HomegrownBlocks.STRIPPED_MANGROVE_LOG_POST.getDefaultState();
+			case "homegrown:mangrove_wood_post":
+				return HomegrownBlocks.MANGROVE_WOOD_POST.getDefaultState();
+			case "homegrown:stripped_mangrove_wood_post":
+				return HomegrownBlocks.STRIPPED_MANGROVE_WOOD_POST.getDefaultState();
+			
 			case "homegrown:crimson_planks_post":
 				return HomegrownBlocks.CRIMSON_PLANKS_POST.getDefaultState();
 			case "homegrown:crimson_stem_post":
@@ -192,6 +204,18 @@ public class PostBlock extends Block {
 				return HomegrownBlocks.DARK_OAK_WOOD_POST.getDefaultState();
 			case STRIPPED_DARK_OAK_WOOD_POST:
 				return HomegrownBlocks.STRIPPED_DARK_OAK_WOOD_POST.getDefaultState();
+			
+			case MANGROVE_LOG_POST:
+				return HomegrownBlocks.MANGROVE_LOG_POST.getDefaultState();
+			case MANGROVE_PLANKS_POST:
+				return HomegrownBlocks.MANGROVE_PLANKS_POST.getDefaultState();
+			case MANGROVE_WOOD_POST:
+				return HomegrownBlocks.MANGROVE_WOOD_POST.getDefaultState();
+			case STRIPPED_MANGROVE_LOG_POST:
+				return HomegrownBlocks.STRIPPED_MANGROVE_LOG_POST.getDefaultState();
+			case STRIPPED_MANGROVE_WOOD_POST:
+				return HomegrownBlocks.STRIPPED_MANGROVE_WOOD_POST.getDefaultState();
+
 			case CRIMSON_PLANKS_POST:
 				return HomegrownBlocks.CRIMSON_PLANKS_POST.getDefaultState();
 			case CRIMSON_STEM_POST:

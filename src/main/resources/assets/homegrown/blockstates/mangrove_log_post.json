@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "homegrown:block/mangrove_log_post"
+        }
+    }
+}

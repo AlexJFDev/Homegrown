@@ -1,0 +1,17 @@
+{
+    "key": {
+        "#": {
+            "item": "minecraft:mangrove_planks"
+        }
+    },
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 4,
+        "item": "homegrown:mangrove_planks_post"
+    },
+    "type": "minecraft:crafting_shaped"
+}

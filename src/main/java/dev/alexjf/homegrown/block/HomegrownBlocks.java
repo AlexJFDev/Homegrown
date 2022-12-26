@@ -48,6 +48,13 @@ public class HomegrownBlocks {
 	public static final Block STRIPPED_DARK_OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block DARK_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_DARK_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+
+	public static final Block MANGROVE_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block MANGROVE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_MANGROVE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block MANGROVE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_MANGROVE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+
 	public static final Block CRIMSON_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block CRIMSON_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	public static final Block STRIPPED_CRIMSON_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
@@ -107,6 +114,13 @@ public class HomegrownBlocks {
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_dark_oak_log_post"), STRIPPED_DARK_OAK_LOG_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"dark_oak_wood_post"), DARK_OAK_WOOD_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_dark_oak_wood_post"), STRIPPED_DARK_OAK_WOOD_POST);
+
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"mangrove_planks_post"), MANGROVE_PLANKS_POST);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"mangrove_log_post"), MANGROVE_LOG_POST);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_mangrove_log_post"), STRIPPED_MANGROVE_LOG_POST);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"mangrove_wood_post"), MANGROVE_WOOD_POST);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_mangrove_wood_post"), STRIPPED_MANGROVE_WOOD_POST);
+
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"crimson_planks_post"), CRIMSON_PLANKS_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"crimson_stem_post"), CRIMSON_STEM_POST);
 		Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"stripped_crimson_stem_post"), STRIPPED_CRIMSON_STEM_POST);
