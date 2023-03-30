@@ -5,8 +5,8 @@ import java.util.List;
 import dev.alexjf.homegrown.block.HomegrownBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
@@ -20,7 +20,7 @@ import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 public class HomegrownConfiguredFeatures {
-    public static final String MOD_ID = "homegrown";
+    /*public static final String MOD_ID = "homegrown";
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> PATCH_CANTALOUPE;
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> PATCH_RICE;
@@ -29,11 +29,14 @@ public class HomegrownConfiguredFeatures {
     static{
         PATCH_CANTALOUPE = ConfiguredFeatures.register(
             MOD_ID + ":patch_cantaloupe", 
+
             Feature.RANDOM_PATCH, 
+
             ConfiguredFeatures.createRandomPatchFeatureConfig(
                 Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                     BlockStateProvider.of(HomegrownBlocks.CANTALOUPE_BLOCK)), 
                 List.of(Blocks.GRASS_BLOCK)));
+        
         PATCH_RICE = ConfiguredFeatures.register(
             MOD_ID + ":patch_rice", 
             Feature.RANDOM_PATCH, 
@@ -780,7 +783,8 @@ public class HomegrownConfiguredFeatures {
                                     BlockPredicate.matchingFluids(new BlockPos(0, 5, 2), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
                                     BlockPredicate.matchingFluids(new BlockPos(0, 5, 3), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
                                     BlockPredicate.matchingFluids(new BlockPos(0, 5, 4), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
-                                    BlockPredicate.matchingFluids(new BlockPos(0, 5, 5), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),BlockPredicate.matchingFluids(new BlockPos(1, -5, -5), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
+                                    BlockPredicate.matchingFluids(new BlockPos(0, 5, 5), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
+                                    BlockPredicate.matchingFluids(new BlockPos(1, -5, -5), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
                                     BlockPredicate.matchingFluids(new BlockPos(1, -5, -4), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
                                     BlockPredicate.matchingFluids(new BlockPos(1, -5, -3), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
                                     BlockPredicate.matchingFluids(new BlockPos(1, -5, -2), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
@@ -1386,4 +1390,5 @@ public class HomegrownConfiguredFeatures {
                                     BlockPredicate.matchingFluids(new BlockPos(5, 5, 4), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA)),
                                     BlockPredicate.matchingFluids(new BlockPos(5, 5, 5), List.of(Fluids.LAVA, Fluids.FLOWING_LAVA))}))})));
     }
+    */
 }

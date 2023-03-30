@@ -1,6 +1,7 @@
 package dev.alexjf.homegrown.feature;
 
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 
@@ -11,7 +12,7 @@ public class HomegrownFeature {
     public static final Feature<SimpleCropBlockFeatureConfig> SIMPLE_CROP_BLOCK;
 
     static {
-        RICE_BLOCK = Registry.register(Registry.FEATURE, MOD_ID + ":rice_block", new RiceBlockFeature(DefaultFeatureConfig.CODEC));
-        SIMPLE_CROP_BLOCK = Registry.register(Registry.FEATURE, MOD_ID + ":simple_crop_block", new SimpleCropBlockFeature(SimpleCropBlockFeatureConfig.CODEC));
+        RICE_BLOCK = Registry.register(Registries.FEATURE, MOD_ID + ":rice_block", new RiceBlockFeature(DefaultFeatureConfig.CODEC));
+        SIMPLE_CROP_BLOCK = Registry.register(Registries.FEATURE, MOD_ID + ":simple_crop_block", new SimpleCropBlockFeature(SimpleCropBlockFeatureConfig.CODEC));
     }
 }

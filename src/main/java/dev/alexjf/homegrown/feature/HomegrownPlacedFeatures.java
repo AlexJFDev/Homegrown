@@ -1,6 +1,6 @@
 package dev.alexjf.homegrown.feature;
 
-import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
@@ -12,7 +12,7 @@ import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 public class HomegrownPlacedFeatures {
-    public static final String MOD_ID = "homegrown";
+    /*public static final String MOD_ID = "homegrown";
 
     public static final RegistryEntry<PlacedFeature> PATCH_CANTALOUPE;
     public static final RegistryEntry<PlacedFeature> PATCH_CANTALOUPE_RIVER;
@@ -53,5 +53,5 @@ public class HomegrownPlacedFeatures {
           SquarePlacementModifier.of(),
           BiomePlacementModifier.of(),
           CountPlacementModifier.of(5)});
-	    }
+	    }*/
 }

@@ -10,11 +10,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 
@@ -32,7 +32,7 @@ public class PostBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack stack = player.getMainHandStack();
 		if (!stack.isEmpty() && stack.getItem() instanceof PostCropSeeds && world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) {
-            String postIdentifier = Registry.BLOCK.getId(world.getBlockState(pos).getBlock()).toString();
+            String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos).getBlock()).toString();
             BlockState cropBlockState = ((PostCropSeeds) stack.getItem()).getCrop();
 			world.setBlockState(pos, cropBlockState.with(PostCropBlock.TYPE, PostType.getPostType(postIdentifier)));
             if (!player.isCreative()) {

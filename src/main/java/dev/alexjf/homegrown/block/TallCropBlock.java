@@ -42,7 +42,7 @@ public class TallCropBlock extends CropBlock {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        world.createAndScheduleBlockTick(pos, this, 1);
+        world.scheduleBlockTick(pos, this, 1);
 
         if (!this.canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
         if (state.get(HALF) == DoubleBlockHalf.LOWER) return state;

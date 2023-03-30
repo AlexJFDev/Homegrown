@@ -21,7 +21,7 @@ public class SimpleCropBlockFeature extends Feature<SimpleCropBlockFeatureConfig
         SimpleCropBlockFeatureConfig simpleCropBlockFeatureConfig = (SimpleCropBlockFeatureConfig)context.getConfig();
         StructureWorldAccess structureWorldAccess = context.getWorld();
         BlockPos blockPos = context.getOrigin();
-        BlockState blockState = simpleCropBlockFeatureConfig.toPlace().getBlockState(context.getRandom(), blockPos);
+        BlockState blockState = simpleCropBlockFeatureConfig.toPlace().get(context.getRandom(), blockPos);
         if (blockState.canPlaceAt(structureWorldAccess, blockPos)) {
             Random random = context.getRandom();
             int age = random.nextInt(8);
