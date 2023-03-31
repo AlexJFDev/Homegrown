@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep.Feature;
 
 public class HomegrownFeatures {
-    /*public static String MOD_ID = "homegrown";
+    /*public static final String MOD_ID = "homegrown";
     
     public static void init(){
         BiomeModifications.addFeature(

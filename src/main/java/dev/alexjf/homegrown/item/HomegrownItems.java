@@ -10,10 +10,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class HomegrownItems {
-    static String MOD_ID = "homegrown";
+    static final String MOD_ID = "homegrown";
 
-	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().food(HomegrownFoodComponents.GREEN_TOMATO));
-	public static final Item RED_TOMATO = new Item(new FabricItemSettings().food(HomegrownFoodComponents.RED_TOMATO));
+	//public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().food(HomegrownFoodComponents.GREEN_TOMATO));
+	//public static final Item RED_TOMATO = new Item(new FabricItemSettings().food(HomegrownFoodComponents.RED_TOMATO));
 	public static final Item TOMATO_SEEDS = new PostCropSeeds(HomegrownBlocks.TOMATO, new Item.Settings());
 	public static final Item CORN_KERNELS = new AliasedBlockItem(HomegrownBlocks.CORN, new Item.Settings().food(HomegrownFoodComponents.CORN_KERNELS));
 	public static final Item CORN_EAR = new Item(new FabricItemSettings().food(HomegrownFoodComponents.CORN_EAR));
@@ -23,9 +23,15 @@ public class HomegrownItems {
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().food(HomegrownFoodComponents.CANTALOUPE_SLICE));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings());
 
+	public static final Item OAK_PLANKS_POST = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_planks_post"), new BlockItem(HomegrownBlocks.OAK_PLANKS_POST, new FabricItemSettings()));
+
+	public static final Item GREEN_TOMATO = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "green_tomato"), new Item(new FabricItemSettings().food(HomegrownFoodComponents.GREEN_TOMATO)));
+	public static final Item RED_TOMATO = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "red_tomato"), new Item(new FabricItemSettings().food(HomegrownFoodComponents.RED_TOMATO)));
+	
+	
+
     public static void init(){
 		// Post Items
-		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_planks_post"), new BlockItem(HomegrownBlocks.OAK_PLANKS_POST, new FabricItemSettings()));
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_log_post"), new BlockItem(HomegrownBlocks.OAK_LOG_POST, new FabricItemSettings()));
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "stripped_oak_log_post"), new BlockItem(HomegrownBlocks.STRIPPED_OAK_LOG_POST, new FabricItemSettings()));
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_wood_post"), new BlockItem(HomegrownBlocks.OAK_WOOD_POST, new FabricItemSettings()));
@@ -74,8 +80,8 @@ public class HomegrownItems {
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "warped_hyphae_post"), new BlockItem(HomegrownBlocks.WARPED_HYPHAE_POST, new FabricItemSettings()));
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "stripped_warped_hyphae_post"), new BlockItem(HomegrownBlocks.STRIPPED_WARPED_HYPHAE_POST, new FabricItemSettings()));
 		// Crop Items
-		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "red_tomato"), RED_TOMATO);
-		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "green_tomato"), GREEN_TOMATO);
+		//Registry.register(Registries.ITEM, new Identifier(MOD_ID, "red_tomato"), RED_TOMATO);
+		//Registry.register(Registries.ITEM, new Identifier(MOD_ID, "green_tomato"), GREEN_TOMATO);
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID,"tomato_seeds"), TOMATO_SEEDS);
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID,"corn_kernels"), CORN_KERNELS);
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "corn_ear"), CORN_EAR);

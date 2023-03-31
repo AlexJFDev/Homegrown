@@ -8,14 +8,16 @@ import dev.alexjf.homegrown.feature.HomegrownFeatures;
 import dev.alexjf.homegrown.item.HomegrownItems;
 import dev.alexjf.homegrown.loot.condition.HomegrownLootConditionTypes;
 import net.fabricmc.api.ModInitializer;
+import dev.alexjf.homegrown.item.HomegrownItemGroups;
 
 public class Homegrown implements ModInitializer {
-	static String MOD_ID = "homegrown";
+	static final String MOD_ID = "homegrown";
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
 		LOGGER.info("****Started Initializing Homegrown****");
+		
 		/*BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
 				RegistryKey.of(Registry.BIOME_KEY, new Identifier("minecraft","savanna")),
@@ -33,7 +35,8 @@ public class Homegrown implements ModInitializer {
 		LOGGER.info("Finished Initializing Homegrown:Miscellaneous");
 		HomegrownBlocks.init();
 		LOGGER.info("Finished Initializing Homegrown:Blocks");
-		HomegrownItems.init();
+		//HomegrownItems.init();
+		HomegrownItemGroups.init();
 		LOGGER.info("Finished Initializing Homegrown:Items");
 		LOGGER.info("****Finished Initializing Homegrown****");
 	}
