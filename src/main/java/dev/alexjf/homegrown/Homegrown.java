@@ -35,7 +35,8 @@ public class Homegrown implements ModInitializer {
 		LOGGER.info("Finished Initializing Homegrown:Miscellaneous");
 		HomegrownBlocks.init();
 		LOGGER.info("Finished Initializing Homegrown:Blocks");
-		//HomegrownItems.init();
+		HomegrownItems.init();
+		//System.out.println(HomegrownItems.RED_TOMATO);
 		HomegrownItemGroups.init();
 		LOGGER.info("Finished Initializing Homegrown:Items");
 		LOGGER.info("****Finished Initializing Homegrown****");
