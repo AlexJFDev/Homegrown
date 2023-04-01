@@ -12,7 +12,8 @@ import net.minecraft.util.Identifier;
 public class HomegrownItems {
     static final String MOD_ID = "homegrown";
 
-	public static final Item OAK_PLANKS_POST = new BlockItem(HomegrownBlocks.OAK_LOG_POST, new FabricItemSettings());
+	public static final Item OAK_LOG_POST = new BlockItem(HomegrownBlocks.OAK_LOG_POST, new FabricItemSettings());
+	public static final Item OAK_PLANKS_POST = new BlockItem(HomegrownBlocks.OAK_PLANKS_POST, new FabricItemSettings());
 
 	public static final Item RED_TOMATO = new Item(new FabricItemSettings().food(HomegrownFoodComponents.RED_TOMATO));
 	public static final Item GREEN_TOMATO = new Item(new FabricItemSettings().food(HomegrownFoodComponents.GREEN_TOMATO));
@@ -27,7 +28,8 @@ public class HomegrownItems {
 	
     public static void init(){
 		// Post Items
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_log_post"), OAK_PLANKS_POST);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_log_post"), OAK_LOG_POST);
+		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_planks_post"), OAK_PLANKS_POST);
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "stripped_oak_log_post"), new BlockItem(HomegrownBlocks.STRIPPED_OAK_LOG_POST, new FabricItemSettings()));
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "oak_wood_post"), new BlockItem(HomegrownBlocks.OAK_WOOD_POST, new FabricItemSettings()));
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "stripped_oak_wood_post"), new BlockItem(HomegrownBlocks.STRIPPED_OAK_WOOD_POST, new FabricItemSettings()));
