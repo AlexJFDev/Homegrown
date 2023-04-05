@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep.Feature;
 
 public class HomegrownFeatures {
-    /*public static final String MOD_ID = "homegrown";
+    public static final String MOD_ID = "homegrown";
     
     public static void init(){
         BiomeModifications.addFeature(
@@ -17,19 +17,19 @@ public class HomegrownFeatures {
 				RegistryKey.of(RegistryKeys.BIOME, new Identifier("minecraft","savanna_plateau")),
 				RegistryKey.of(RegistryKeys.BIOME, new Identifier("minecraft","windswept_savanna"))), 
 			Feature.VEGETAL_DECORATION,
-			HomegrownPlacedFeatures.PATCH_CANTALOUPE.getKey().get());
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_cantaloupe")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
 				RegistryKey.of(RegistryKeys.BIOME, new Identifier("minecraft","river"))), 
 			Feature.VEGETAL_DECORATION,
-			HomegrownPlacedFeatures.PATCH_CANTALOUPE_RIVER.getKey().get());
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_cantaloupe_river")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.all(), 
 			Feature.VEGETAL_DECORATION,
-			HomegrownPlacedFeatures.PATCH_RICE.getKey().get());
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_rice")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.all(), 
 			Feature.VEGETAL_DECORATION,
-			HomegrownPlacedFeatures.PATCH_BURNING_BUSH.getKey().get());
-    }*/
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_burning_bush")));
+    }
 }
