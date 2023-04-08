@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 import dev.alexjf.homegrown.block.enums.Dormant;
 import dev.alexjf.homegrown.item.HomegrownItems;
+import dev.alexjf.homegrown.registry.tag.HomegrownBlockTags;
 import dev.alexjf.homegrown.state.property.HomegrownProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.registry.tag.BlockTags;
@@ -30,7 +30,7 @@ public class BurningBushBlock extends TallCropBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || floor.isIn(BlockTags.DIRT) || floor.isOf(Blocks.CLAY);
+        return floor.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || floor.isIn(HomegrownBlockTags.BURNING_BUSH_PLANTABLE_ON);
     }
 
     @Override

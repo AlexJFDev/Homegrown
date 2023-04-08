@@ -31,8 +31,9 @@ bin/
 # fabric
 
 run/
+ensources/
+.project
 
 # misc
 
-ensources/
 gradle/

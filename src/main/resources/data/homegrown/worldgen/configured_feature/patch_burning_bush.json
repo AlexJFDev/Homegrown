@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:random_patch",
+    "config": {
+      "tries": 192,
+      "xz_spread": 14,
+      "y_spread": 6,
+      "feature": {
+        "feature": {
+          "type": "homegrown:simple_crop_block",
+          "config": {
+            "to_place": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "homegrown:burning_bush"
+              }
+            }
+          }
+        },
+        "placement": []
+      }
+    }
+  }
+  

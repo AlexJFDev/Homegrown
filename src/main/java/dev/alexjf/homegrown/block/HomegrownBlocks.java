@@ -115,13 +115,11 @@ public class HomegrownBlocks {
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"stripped_dark_oak_log_post"), STRIPPED_DARK_OAK_LOG_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"dark_oak_wood_post"), DARK_OAK_WOOD_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"stripped_dark_oak_wood_post"), STRIPPED_DARK_OAK_WOOD_POST);
-
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"mangrove_planks_post"), MANGROVE_PLANKS_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"mangrove_log_post"), MANGROVE_LOG_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"stripped_mangrove_log_post"), STRIPPED_MANGROVE_LOG_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"mangrove_wood_post"), MANGROVE_WOOD_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"stripped_mangrove_wood_post"), STRIPPED_MANGROVE_WOOD_POST);
-
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"crimson_planks_post"), CRIMSON_PLANKS_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"crimson_stem_post"), CRIMSON_STEM_POST);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"stripped_crimson_stem_post"), STRIPPED_CRIMSON_STEM_POST);
