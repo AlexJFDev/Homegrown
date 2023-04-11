@@ -7,6 +7,7 @@ import dev.alexjf.homegrown.block.HomegrownBlocks;
 import dev.alexjf.homegrown.item.HomegrownItemGroups;
 import dev.alexjf.homegrown.item.HomegrownItems;
 import dev.alexjf.homegrown.loot.condition.HomegrownLootConditionTypes;
+import dev.alexjf.homegrown.world.gen.blockpredicate.HomegrownBlockPredicateType;
 import dev.alexjf.homegrown.world.gen.feature.HomegrownFeatures;
 import net.fabricmc.api.ModInitializer;
 
@@ -17,9 +18,11 @@ public class Homegrown implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("****Started Initializing Homegrown****");
-		HomegrownFeatures.init();
 		HomegrownLootConditionTypes.init();
 		LOGGER.info("Finished Initializing Homegrown:Miscellaneous");
+		HomegrownBlockPredicateType.init();
+		HomegrownFeatures.init();
+		LOGGER.info("Finished Initializing Homegrown:World Generation");
 		HomegrownBlocks.init();
 		LOGGER.info("Finished Initializing Homegrown:Blocks");
 		HomegrownItems.init();
