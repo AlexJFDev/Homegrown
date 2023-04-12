@@ -6,6 +6,7 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.block.Block;
+import net.minecraft.command.argument.BlockPredicateArgumentType.BlockPredicate;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntryList;
@@ -13,7 +14,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.world.gen.blockpredicate.OffsetPredicate;
 
 public class MatchingAnyBlockPredicate 
-extends OffsetPredicate {
+implements BlockPredicate {
     private final RegistryEntryList<Block> blocks;
     private final RegistryEntryList<TagKey<Block>> blockTags;
     private final RegistryEntryList<Fluid> fluids;
