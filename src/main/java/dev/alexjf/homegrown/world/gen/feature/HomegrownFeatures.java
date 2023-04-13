@@ -48,7 +48,7 @@ public class HomegrownFeatures {
 			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_wild_rice")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.all(), 
-			Feature.VEGETAL_DECORATION,
+			Feature.UNDERGROUND_DECORATION,
 			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_burning_bush")));
     }
 }
