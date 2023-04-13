@@ -1,6 +1,8 @@
 package dev.alexjf.homegrown.world.gen.blockpredicate;
 
-import com.mojang.serialization.Codec;
+public class AlwaysFalseBlockPredicate {} // disabled for now
+
+/*import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
@@ -23,4 +25,4 @@ implements BlockPredicate {
     public BlockPredicateType<?> getType() {
         return HomegrownBlockPredicateType.FALSE;
     }
-}
+}*/

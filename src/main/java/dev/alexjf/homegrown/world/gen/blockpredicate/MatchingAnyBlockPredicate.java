@@ -1,5 +1,8 @@
 package dev.alexjf.homegrown.world.gen.blockpredicate;
 
+public class MatchingAnyBlockPredicate {} // disabled for now
+/* 
+
 import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -13,8 +16,8 @@ import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.world.gen.blockpredicate.OffsetPredicate;
 
-public class MatchingAnyBlockPredicate {}
-/*implements BlockPredicate {
+public class MatchingAnyBlockPredicate
+implements BlockPredicate {
     private final RegistryEntryList<Block> blocks;
     private final RegistryEntryList<TagKey<Block>> blockTags;
     private final RegistryEntryList<Fluid> fluids;
