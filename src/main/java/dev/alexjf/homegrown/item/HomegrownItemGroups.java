@@ -30,11 +30,11 @@ public class HomegrownItemGroups {
 				entries.add(HomegrownItems.CANTALOUPE_SLICE);
 				entries.add(HomegrownItems.CANTALOUPE_BLOCK);
 				entries.add(HomegrownItems.CANTALOUPE_SEEDS);
+				entries.add(HomegrownItems.BLUEBERRIES);
 			})
 			.build();
 
 		blockGroup = FabricItemGroup.builder(new Identifier(MOD_ID, "blocks"))
-			.displayName(Text.literal("Homegrown: Blocks"))
 			.icon(() -> new ItemStack(HomegrownBlocks.OAK_LOG_POST))
 			.entries((context, entries) -> {
 				entries.add(HomegrownItems.OAK_PLANKS_POST);
