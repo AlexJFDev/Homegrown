@@ -1,4 +1,4 @@
-package dev.alexjf.homegrown.feature;
+package dev.alexjf.homegrown.world.gen.feature;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

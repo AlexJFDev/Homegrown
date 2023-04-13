@@ -1,0 +1,9 @@
+{
+    "values":[
+        "minecraft:dirt",
+        "minecraft:clay",
+        "#minecraft:base_stone_overworld",
+        "#minecraft:bamboo_plantable_on",
+        "#c:ores"
+    ]
+}

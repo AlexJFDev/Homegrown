@@ -1,0 +1,17 @@
+{
+    "key": {
+        "#": {
+            "item": "minecraft:mangrove_wood"
+        }
+    },
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 4,
+        "item": "homegrown:mangrove_wood_post"
+    },
+    "type": "minecraft:crafting_shaped"
+}

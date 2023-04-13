@@ -7,13 +7,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
@@ -59,7 +59,7 @@ public class TomatoBlock extends PostCropBlock{
                 int j;
                 for(j = 1; world.getBlockState(pos.down(j)).isOf(this); ++j){}
                 if (i >= 5 && world.getBlockState(pos.up()).getBlock() instanceof PostBlock && j < 3){
-                    String postIdentifier = Registry.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
+                    String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
                     world.setBlockState(pos.up(), this.withAge(0).with(TomatoBlock.TYPE, PostType.getPostType(postIdentifier)));
                 }
                 else if (i < this.getMaxAge()) {
@@ -78,7 +78,7 @@ public class TomatoBlock extends PostCropBlock{
                 int l;
 			    for(l = 1; world.getBlockState(pos.down(l)).isOf(this); ++l){}
                 if(l < 3){
-                    String postIdentifier = Registry.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
+                    String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
                     world.setBlockState(pos.up(), this.withAge(i - j).with(this.getTypeProperty(), PostType.getPostType(postIdentifier)), Block.NOTIFY_LISTENERS);
                 }
             }

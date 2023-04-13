@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:random_patch",
+    "config": {
+      "tries": 96,
+      "xz_spread": 7,
+      "y_spread": 3,
+      "feature": {
+        "feature": {
+          "type": "homegrown:simple_crop_block",
+          "config": {
+            "to_place": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "homegrown:wild_rice"
+              }
+            }
+          }
+        },
+        "placement": []
+      }
+    }
+  }
+  
