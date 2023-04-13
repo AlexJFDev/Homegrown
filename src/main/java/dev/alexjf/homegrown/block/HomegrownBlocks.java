@@ -73,13 +73,13 @@ public class HomegrownBlocks {
 	public static final Block WILD_RICE = new WildRiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
 	public static final Block BURNING_BUSH = new BurningBushBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
 	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-	public static final Block BLUEBERRY_BUSH = new BerryBushBlock(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
     public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD));
 	public static final Block CANTALOUPE_STEM = new StemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
 		return HomegrownItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
+	public static final Block BLUEBERRY_BUSH = new BerryBushBlock(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
 	// Miscellaneous Blocks
 	public static final Block BURNING_BALE = new HayBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC, MapColor.RED).strength(0.5f).sounds(BlockSoundGroup.GRASS));
 	
@@ -140,6 +140,7 @@ public class HomegrownBlocks {
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"cantaloupe_block"), CANTALOUPE_BLOCK);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"cantaloupe_stem"), CANTALOUPE_STEM);
+		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"blueberry_bush"), BLUEBERRY_BUSH);
 		// Miscellaneous Blocks
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "burning_bale"), BURNING_BALE);
     }
