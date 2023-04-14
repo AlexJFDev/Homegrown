@@ -34,7 +34,7 @@ public class PostBlock extends Block {
 		if (!stack.isEmpty() && stack.getItem() instanceof PostCropSeeds && world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) {
             String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos).getBlock()).toString();
             BlockState cropBlockState = ((PostCropSeeds) stack.getItem()).getCrop();
-			world.setBlockState(pos, cropBlockState.with(PostCropBlock.TYPE, PostType.getPostType(postIdentifier)));
+			world.setBlockState(pos, cropBlockState.with(PostCropBlock.POST_TYPE, PostType.getPostType(postIdentifier)));
             if (!player.isCreative()) {
 				stack.decrement(1);
 			}

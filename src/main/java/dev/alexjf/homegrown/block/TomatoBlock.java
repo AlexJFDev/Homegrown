@@ -44,7 +44,7 @@ public class TomatoBlock extends PostCropBlock{
         int i = this.getAge(state);
         if(i >= 6){
             dropStacks(state, world, pos);
-            world.setBlockState(pos, this.withAge(5).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, this.withAge(5).with(this.getTypeProperty(), (PostType)state.get(POST_TYPE)), Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;
         }
         return ActionResult.FAIL;
@@ -60,10 +60,10 @@ public class TomatoBlock extends PostCropBlock{
                 for(j = 1; world.getBlockState(pos.down(j)).isOf(this); ++j){}
                 if (i >= 5 && world.getBlockState(pos.up()).getBlock() instanceof PostBlock && j < 3){
                     String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
-                    world.setBlockState(pos.up(), this.withAge(0).with(TomatoBlock.TYPE, PostType.getPostType(postIdentifier)));
+                    world.setBlockState(pos.up(), this.withAge(0).with(TomatoBlock.POST_TYPE, PostType.getPostType(postIdentifier)));
                 }
                 else if (i < this.getMaxAge()) {
-                    world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(POST_TYPE)), Block.NOTIFY_LISTENERS);
                 }
 			}
 		}
@@ -84,6 +84,6 @@ public class TomatoBlock extends PostCropBlock{
             }
 			i = j;
 		}
-		world.setBlockState(pos, this.withAge(i).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
+		world.setBlockState(pos, this.withAge(i).with(this.getTypeProperty(), (PostType)state.get(POST_TYPE)), Block.NOTIFY_LISTENERS);
 	}
 }

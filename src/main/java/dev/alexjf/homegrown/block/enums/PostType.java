@@ -128,7 +128,6 @@ public enum PostType implements StringIdentifiable{
 				return DARK_OAK_WOOD_POST;
 			case "homegrown:stripped_dark_oak_wood_post":
 				return STRIPPED_DARK_OAK_WOOD_POST;
-			
 			case "homegrown:mangrove_planks_post":
 				return MANGROVE_PLANKS_POST;
 			case "homegrown:mangrove_log_post":
