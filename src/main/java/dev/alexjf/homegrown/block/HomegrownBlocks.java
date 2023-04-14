@@ -80,6 +80,7 @@ public class HomegrownBlocks {
 		return HomegrownItems.CANTALOUPE_SEEDS;
 	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
 	public static final Block BLUEBERRY_BUSH = new BerryBushBlock(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
+	public static final Block STRAWBERRY_BUSH = new StrawberryBushBlock(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
 	// Miscellaneous Blocks
 	public static final Block BURNING_BALE = new HayBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC, MapColor.RED).strength(0.5f).sounds(BlockSoundGroup.GRASS));
 	
@@ -141,6 +142,7 @@ public class HomegrownBlocks {
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"attached_cantaloupe_stem"), ATTACHED_CANTALOUPE_STEM);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"cantaloupe_stem"), CANTALOUPE_STEM);
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"blueberry_bush"), BLUEBERRY_BUSH);
+		Registry.register(Registries.BLOCK, new Identifier(MOD_ID,"strawberry_bush"), STRAWBERRY_BUSH);
 		// Miscellaneous Blocks
 		Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "burning_bale"), BURNING_BALE);
     }

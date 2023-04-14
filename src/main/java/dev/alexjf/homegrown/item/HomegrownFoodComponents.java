@@ -10,4 +10,5 @@ public class HomegrownFoodComponents {
     public static final FoodComponent CORN_KERNELS = (new FoodComponent.Builder()).hunger(1).saturationModifier(0.1F).build();
     public static final FoodComponent BROWN_RICE = (new FoodComponent.Builder()).hunger(1).saturationModifier(0.1F).build();
     public static final FoodComponent BLUEBERRIES = new FoodComponent.Builder().hunger(2).saturationModifier(0.1f).build();
+    public static final FoodComponent STRAWBERRIES = new FoodComponent.Builder().hunger(2).saturationModifier(0.1f).build();
 }

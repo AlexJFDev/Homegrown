@@ -4,7 +4,6 @@ import dev.alexjf.homegrown.block.HomegrownBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class HomegrownItemGroups {
@@ -31,6 +30,7 @@ public class HomegrownItemGroups {
 				entries.add(HomegrownItems.CANTALOUPE_BLOCK);
 				entries.add(HomegrownItems.CANTALOUPE_SEEDS);
 				entries.add(HomegrownItems.BLUEBERRIES);
+				entries.add(HomegrownItems.STRAWBERRIES);
 			})
 			.build();
 

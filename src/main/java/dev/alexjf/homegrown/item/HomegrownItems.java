@@ -72,6 +72,7 @@ public class HomegrownItems {
 	public static final Item CANTALOUPE_SLICE = new Item(new FabricItemSettings().food(HomegrownFoodComponents.CANTALOUPE_SLICE));
 	public static final Item CANTALOUPE_SEEDS = new AliasedBlockItem(HomegrownBlocks.CANTALOUPE_STEM, new Item.Settings());
 	public static final Item BLUEBERRIES = new AliasedBlockItem(HomegrownBlocks.BLUEBERRY_BUSH, new Item.Settings().food(HomegrownFoodComponents.BLUEBERRIES));
+	public static final Item STRAWBERRIES = new AliasedBlockItem(HomegrownBlocks.STRAWBERRY_BUSH, new Item.Settings().food(HomegrownFoodComponents.STRAWBERRIES));
 
     public static void init(){
 		// Post Items 
@@ -135,5 +136,6 @@ public class HomegrownItems {
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "cantaloupe_slice"), CANTALOUPE_SLICE);
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID,"cantaloupe_seeds"), CANTALOUPE_SEEDS);
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID,"blueberries"), BLUEBERRIES);
+		Registry.register(Registries.ITEM, new Identifier(MOD_ID,"strawberries"), STRAWBERRIES);
     }
 }
