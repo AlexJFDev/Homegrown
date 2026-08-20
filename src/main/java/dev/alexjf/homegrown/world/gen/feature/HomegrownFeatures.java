@@ -2,11 +2,11 @@ package dev.alexjf.homegrown.world.gen.feature;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.gen.GenerationStep.Feature;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 
 public class HomegrownFeatures {
     public static final String MOD_ID = "homegrown";
@@ -16,39 +16,39 @@ public class HomegrownFeatures {
 
         BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
-				BiomeKeys.SAVANNA,
-				BiomeKeys.SAVANNA_PLATEAU,
-				BiomeKeys.WINDSWEPT_SAVANNA
+				Biomes.SAVANNA,
+				Biomes.SAVANNA_PLATEAU,
+				Biomes.WINDSWEPT_SAVANNA
 			), 
-			Feature.VEGETAL_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_cantaloupe_sparse")));
+			Decoration.VEGETAL_DECORATION,
+			ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, "patch_cantaloupe_sparse")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
-				BiomeKeys.RIVER
+				Biomes.RIVER
 			), 
-			Feature.VEGETAL_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_cantaloupe")));
+			Decoration.VEGETAL_DECORATION,
+			ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, "patch_cantaloupe")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.excludeByKey(
-				BiomeKeys.BEACH,
-				BiomeKeys.SNOWY_BEACH,
-				BiomeKeys.STONY_SHORE,
-				BiomeKeys.FROZEN_RIVER,
-				BiomeKeys.OCEAN,
-				BiomeKeys.WARM_OCEAN,
-				BiomeKeys.LUKEWARM_OCEAN,
-				BiomeKeys.COLD_OCEAN,
-				BiomeKeys.FROZEN_OCEAN,
-				BiomeKeys.DEEP_OCEAN,
-				BiomeKeys.DEEP_LUKEWARM_OCEAN,
-				BiomeKeys.DEEP_COLD_OCEAN,
-				BiomeKeys.DEEP_FROZEN_OCEAN
+				Biomes.BEACH,
+				Biomes.SNOWY_BEACH,
+				Biomes.STONY_SHORE,
+				Biomes.FROZEN_RIVER,
+				Biomes.OCEAN,
+				Biomes.WARM_OCEAN,
+				Biomes.LUKEWARM_OCEAN,
+				Biomes.COLD_OCEAN,
+				Biomes.FROZEN_OCEAN,
+				Biomes.DEEP_OCEAN,
+				Biomes.DEEP_LUKEWARM_OCEAN,
+				Biomes.DEEP_COLD_OCEAN,
+				Biomes.DEEP_FROZEN_OCEAN
 			),
-			Feature.VEGETAL_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_wild_rice")));
+			Decoration.VEGETAL_DECORATION,
+			ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, "patch_wild_rice")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.all(), 
-			Feature.UNDERGROUND_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_burning_bush")));
+			Decoration.UNDERGROUND_DECORATION,
+			ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, "patch_burning_bush")));
     }
 }

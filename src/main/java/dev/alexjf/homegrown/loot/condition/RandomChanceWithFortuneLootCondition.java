@@ -5,19 +5,18 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.Set;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.ItemStack;
-import net.minecraft.loot.condition.LootCondition;
-import net.minecraft.loot.condition.LootConditionType;
-import net.minecraft.loot.context.LootContext;
-import net.minecraft.loot.context.LootContextParameters;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.context.ContextParameter;
+import net.minecraft.core.Holder;
+import net.minecraft.util.context.ContextKey;
+import net.minecraft.world.item.ItemInstance;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 
 public class RandomChanceWithFortuneLootCondition
-implements LootCondition {
+implements LootItemCondition {
     public static final MapCodec<RandomChanceWithFortuneLootCondition> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             Codec.FLOAT.fieldOf("chance").forGetter(condition -> condition.chance),
             Codec.FLOAT.fieldOf("fortune_multiplier").forGetter(condition -> condition.fortuneMultiplier)
@@ -32,27 +31,27 @@ implements LootCondition {
     }
 
     @Override
-    public LootConditionType getType() {
-        return HomegrownLootConditionTypes.RANDOM_CHANCE_WITH_FORTUNE;
+    public MapCodec<? extends LootItemCondition> codec() {
+        return CODEC;
     }
 
     @Override
-    public Set<ContextParameter<?>> getAllowedParameters() {
-        return ImmutableSet.of(LootContextParameters.TOOL);
+    public Set<ContextKey<?>> getReferencedContextParams() {
+        return ImmutableSet.of(LootContextParams.TOOL);
     }
 
     @Override
     public boolean test(LootContext lootContext) {
-        ItemStack itemStack = lootContext.get(LootContextParameters.TOOL);
+        ItemInstance itemStack = lootContext.getOptionalParameter(LootContextParams.TOOL);
         int i = 0;
         if (itemStack != null) {
-            RegistryEntry<Enchantment> fortune = lootContext.getLookup().getEntryOrThrow(Enchantments.FORTUNE);
-            i = EnchantmentHelper.getLevel(fortune, itemStack);
+            Holder<Enchantment> fortune = lootContext.getResolver().getOrThrow(Enchantments.FORTUNE);
+            i = EnchantmentHelper.getItemEnchantmentLevel(fortune, itemStack);
         }
         return lootContext.getRandom().nextFloat() < this.chance + (float)i * this.fortuneMultiplier;
     }
 
-    public static LootCondition.Builder builder(float chance, float fortuneMultiplier) {
+    public static LootItemCondition.Builder builder(float chance, float fortuneMultiplier) {
         return () -> new RandomChanceWithFortuneLootCondition(chance, fortuneMultiplier);
     }
 }

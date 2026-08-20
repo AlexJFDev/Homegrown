@@ -2,87 +2,87 @@ package dev.alexjf.homegrown.block;
 
 import dev.alexjf.homegrown.block.enums.PostType;
 import dev.alexjf.homegrown.item.HomegrownItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.registry.Registries;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class TomatoBlock extends PostCropBlock{
 
-    protected TomatoBlock(Settings settings) {
+    protected TomatoBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-	protected ItemConvertible getSeedsItem() {
+	protected ItemLike getBaseSeedId() {
 		return HomegrownItems.TOMATO_SEEDS;
 	}
 
     // This could potentially cause lag. It needs looking into.
     @Override
-    public boolean hasRandomTicks(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return true;
     }
 
     @Override
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-		return floor.isOf(Blocks.FARMLAND) || floor.isOf(this);
+    protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
+		return floor.is(Blocks.FARMLAND) || floor.is(this);
 	}
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         int i = this.getAge(state);
         if(i >= 6){
-            dropStacks(state, world, pos);
-            world.setBlockState(pos, this.withAge(5).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
-            return ActionResult.SUCCESS;
+            dropResources(state, world, pos);
+            world.setBlock(pos, this.getStateForAge(5).setValue(this.getTypeProperty(), (PostType)state.getValue(TYPE)), Block.UPDATE_CLIENTS);
+            return InteractionResult.SUCCESS;
         }
-        return ActionResult.FAIL;
+        return InteractionResult.FAIL;
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (world.getBaseLightLevel(pos, 0) >= 9) {
-            float f = PostCropBlock.getAvailableMoisture(this, world, pos);
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+        if (world.getRawBrightness(pos, 0) >= 9) {
+            float f = PostCropBlock.getGrowthSpeed(this, world, pos);
 			if (random.nextInt((int)(25.0F / f) + 1) == 0) {
                 int i = this.getAge(state);
                 int j;
-                for(j = 1; world.getBlockState(pos.down(j)).isOf(this); ++j){}
-                if (i >= 5 && world.getBlockState(pos.up()).getBlock() instanceof PostBlock && j < 3){
-                    String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
-                    world.setBlockState(pos.up(), this.withAge(0).with(TomatoBlock.TYPE, PostType.getPostType(postIdentifier)));
+                for(j = 1; world.getBlockState(pos.below(j)).is(this); ++j){}
+                if (i >= 5 && world.getBlockState(pos.above()).getBlock() instanceof PostBlock && j < 3){
+                    String postIdentifier = BuiltInRegistries.BLOCK.getKey(world.getBlockState(pos.above()).getBlock()).toString();
+                    world.setBlockAndUpdate(pos.above(), this.getStateForAge(0).setValue(TomatoBlock.TYPE, PostType.getPostType(postIdentifier)));
                 }
                 else if (i < this.getMaxAge()) {
-                    world.setBlockState(pos, this.withAge(i + 1).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
+                    world.setBlock(pos, this.getStateForAge(i + 1).setValue(this.getTypeProperty(), (PostType)state.getValue(TYPE)), Block.UPDATE_CLIENTS);
                 }
 			}
 		}
 	}
 
     @Override
-	public void applyGrowth(World world, BlockPos pos, BlockState state) {
-		int i = this.getAge(state) + this.getGrowthAmount(world);
+	public void growCrops(Level world, BlockPos pos, BlockState state) {
+		int i = this.getAge(state) + this.getBonemealAgeIncrease(world);
 		int j = this.getMaxAge();
 		if (i > j) {
-            if (world.getBlockState(pos.up()).getBlock() instanceof PostBlock) {
+            if (world.getBlockState(pos.above()).getBlock() instanceof PostBlock) {
                 int l;
-			    for(l = 1; world.getBlockState(pos.down(l)).isOf(this); ++l){}
+			    for(l = 1; world.getBlockState(pos.below(l)).is(this); ++l){}
                 if(l < 3){
-                    String postIdentifier = Registries.BLOCK.getId(world.getBlockState(pos.up()).getBlock()).toString();
-                    world.setBlockState(pos.up(), this.withAge(i - j).with(this.getTypeProperty(), PostType.getPostType(postIdentifier)), Block.NOTIFY_LISTENERS);
+                    String postIdentifier = BuiltInRegistries.BLOCK.getKey(world.getBlockState(pos.above()).getBlock()).toString();
+                    world.setBlock(pos.above(), this.getStateForAge(i - j).setValue(this.getTypeProperty(), PostType.getPostType(postIdentifier)), Block.UPDATE_CLIENTS);
                 }
             }
 			i = j;
 		}
-		world.setBlockState(pos, this.withAge(i).with(this.getTypeProperty(), (PostType)state.get(TYPE)), Block.NOTIFY_LISTENERS);
+		world.setBlock(pos, this.getStateForAge(i).setValue(this.getTypeProperty(), (PostType)state.getValue(TYPE)), Block.UPDATE_CLIENTS);
 	}
 }

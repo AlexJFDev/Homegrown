@@ -1,8 +1,8 @@
 package dev.alexjf.homegrown.block.enums;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
 
-public enum PostType implements StringIdentifiable{
+public enum PostType implements StringRepresentable{
     OAK_LOG_POST("oak_log_post"),
 	OAK_PLANKS_POST("oak_planks_post"),
 	OAK_WOOD_POST("oak_wood_post"),
@@ -62,7 +62,7 @@ public enum PostType implements StringIdentifiable{
 		return this.name;
 	}
 
-	public String asString() {
+	public String getSerializedName() {
 		return this.name;
 	}
 
