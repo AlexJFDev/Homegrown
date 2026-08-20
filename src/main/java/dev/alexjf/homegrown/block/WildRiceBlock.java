@@ -1,18 +1,18 @@
 package dev.alexjf.homegrown.block;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class WildRiceBlock extends RiceBlock {
 
-    public WildRiceBlock(Settings settings) {
+    public WildRiceBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos floorPos) {
-        return floor.isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+    protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos floorPos) {
+        return floor.is(BlockTags.SUPPORTS_BAMBOO);
 	}
 }

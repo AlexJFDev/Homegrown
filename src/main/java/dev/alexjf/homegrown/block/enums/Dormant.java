@@ -1,16 +1,16 @@
 package dev.alexjf.homegrown.block.enums;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
  
-public enum Dormant implements StringIdentifiable {
+public enum Dormant implements StringRepresentable {
    TRUE,
    FALSE;
 
    public String toString() {
-      return this.asString();
+      return this.getSerializedName();
    }
  
-   public String asString() {
+   public String getSerializedName() {
       return this == TRUE ? "true" : "false";
    }
 }

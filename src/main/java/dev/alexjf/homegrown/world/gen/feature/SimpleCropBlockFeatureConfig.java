@@ -2,13 +2,12 @@ package dev.alexjf.homegrown.world.gen.feature;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
-
-public record SimpleCropBlockFeatureConfig(BlockStateProvider toPlace) implements FeatureConfig {
+public record SimpleCropBlockFeatureConfig(BlockStateProvider toPlace) implements FeatureConfiguration {
    public static final Codec<SimpleCropBlockFeatureConfig> CODEC = RecordCodecBuilder.create((instance) -> {
-         return instance.group(BlockStateProvider.TYPE_CODEC.fieldOf("to_place").forGetter((config) -> {
+         return instance.group(BlockStateProvider.CODEC.fieldOf("to_place").forGetter((config) -> {
          return config.toPlace;
       })).apply(instance, SimpleCropBlockFeatureConfig::new);
    });
