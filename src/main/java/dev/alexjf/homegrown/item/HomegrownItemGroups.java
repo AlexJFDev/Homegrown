@@ -4,18 +4,26 @@ import dev.alexjf.homegrown.block.HomegrownBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class HomegrownItemGroups {
     static final String MOD_ID = "homegrown";
-    
+
+	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "items"));
+	public static final RegistryKey<ItemGroup> BLOCK_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "blocks"));
+
 	public static ItemGroup itemGroup;
 
 	public static ItemGroup blockGroup;
 
 	public static void init(){
-		itemGroup = FabricItemGroup.builder(new Identifier(MOD_ID, "items"))
+		itemGroup = Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, FabricItemGroup.builder()
+			.displayName(Text.translatable("itemGroup.homegrown.items"))
 			.icon(() -> new ItemStack(HomegrownItems.RED_TOMATO))
 			.entries((context, entries) -> {
 				entries.add(HomegrownItems.RED_TOMATO);
@@ -31,9 +39,9 @@ public class HomegrownItemGroups {
 				entries.add(HomegrownItems.CANTALOUPE_BLOCK);
 				entries.add(HomegrownItems.CANTALOUPE_SEEDS);
 			})
-			.build();
+			.build());
 
-		blockGroup = FabricItemGroup.builder(new Identifier(MOD_ID, "blocks"))
+		blockGroup = Registry.register(Registries.ITEM_GROUP, BLOCK_GROUP_KEY, FabricItemGroup.builder()
 			.displayName(Text.literal("Homegrown: Blocks"))
 			.icon(() -> new ItemStack(HomegrownBlocks.OAK_LOG_POST))
 			.entries((context, entries) -> {
@@ -83,6 +91,6 @@ public class HomegrownItemGroups {
 				entries.add(HomegrownItems.WARPED_HYPHAE_POST);
 				entries.add(HomegrownItems.STRIPPED_WARPED_HYPHAE_POST);
 			})
-			.build();
+			.build());
 	}
 }

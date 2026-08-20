@@ -1,86 +1,88 @@
 package dev.alexjf.homegrown.block;
 
-import dev.alexjf.homegrown.item.HomegrownItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AttachedStemBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.GourdBlock;
+import net.minecraft.block.PumpkinBlock;
 import net.minecraft.block.HayBlock;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
 import net.minecraft.block.StemBlock;
 import net.minecraft.block.AbstractBlock.OffsetType;
+import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class HomegrownBlocks {
     static final String MOD_ID = "homegrown";
 	// Post Blocks
-    public static final Block OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block SPRUCE_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block SPRUCE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_SPRUCE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block SPRUCE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_SPRUCE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block BIRCH_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block BIRCH_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_BIRCH_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block BIRCH_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_BIRCH_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block JUNGLE_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block JUNGLE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_JUNGLE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block JUNGLE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_JUNGLE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block ACACIA_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block ACACIA_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_ACACIA_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block ACACIA_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_ACACIA_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block DARK_OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block DARK_OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_DARK_OAK_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block DARK_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_DARK_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+    public static final Block OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block OAK_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_OAK_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block OAK_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block SPRUCE_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block SPRUCE_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_SPRUCE_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block SPRUCE_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_SPRUCE_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block BIRCH_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block BIRCH_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_BIRCH_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block BIRCH_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_BIRCH_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block JUNGLE_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block JUNGLE_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_JUNGLE_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block JUNGLE_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_JUNGLE_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block ACACIA_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block ACACIA_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_ACACIA_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block ACACIA_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_ACACIA_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block DARK_OAK_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block DARK_OAK_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_DARK_OAK_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block DARK_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_DARK_OAK_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
 
-	public static final Block MANGROVE_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block MANGROVE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_MANGROVE_LOG_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block MANGROVE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_MANGROVE_WOOD_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block MANGROVE_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block MANGROVE_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_MANGROVE_LOG_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block MANGROVE_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_MANGROVE_WOOD_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
 
-	public static final Block CRIMSON_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block CRIMSON_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_CRIMSON_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block CRIMSON_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_CRIMSON_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block WARPED_PLANKS_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block WARPED_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_WARPED_STEM_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
-	public static final Block STRIPPED_WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.of(Material.WOOD).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block CRIMSON_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block CRIMSON_STEM_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_CRIMSON_STEM_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block CRIMSON_HYPHAE_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_CRIMSON_HYPHAE_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block WARPED_PLANKS_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block WARPED_STEM_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_WARPED_STEM_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
+	public static final Block STRIPPED_WARPED_HYPHAE_POST = new PostBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).hardness(2f).sounds(BlockSoundGroup.WOOD));
 	// Crop Blocks
-	public static final Block TOMATO = new TomatoBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-	public static final Block CORN = new CornBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
-	public static final Block RICE = new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-	public static final Block WILD_RICE = new WildRiceBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
-	public static final Block BURNING_BUSH = new BurningBushBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
-	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedStemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
-		return HomegrownItems.CANTALOUPE_SEEDS;
-	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD));
-	public static final Block CANTALOUPE_STEM = new StemBlock((GourdBlock)CANTALOUPE_BLOCK, () -> {
-		return HomegrownItems.CANTALOUPE_SEEDS;
-	}, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
+	public static final Block TOMATO = new TomatoBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).nonOpaque().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block CORN = new CornBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_GREEN).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
+	public static final Block RICE = new RiceBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_GREEN).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+	public static final Block WILD_RICE = new WildRiceBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_GREEN).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
+	public static final Block BURNING_BUSH = new BurningBushBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_GREEN).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
+	public static final RegistryKey<Block> CANTALOUPE_BLOCK_KEY = RegistryKey.of(RegistryKeys.BLOCK, new Identifier(MOD_ID, "cantaloupe_block"));
+	public static final RegistryKey<Block> CANTALOUPE_STEM_KEY = RegistryKey.of(RegistryKeys.BLOCK, new Identifier(MOD_ID, "cantaloupe_stem"));
+	public static final RegistryKey<Block> ATTACHED_CANTALOUPE_STEM_KEY = RegistryKey.of(RegistryKeys.BLOCK, new Identifier(MOD_ID, "attached_cantaloupe_stem"));
+	public static final RegistryKey<Item> CANTALOUPE_SEEDS_KEY = RegistryKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "cantaloupe_seeds"));
+
+	public static final Block CANTALOUPE_BLOCK = new CantaloupeBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
+	public static final Block ATTACHED_CANTALOUPE_STEM = new AttachedStemBlock(CANTALOUPE_STEM_KEY, CANTALOUPE_BLOCK_KEY, CANTALOUPE_SEEDS_KEY, AbstractBlock.Settings.create().mapColor(MapColor.PALE_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD));
+	public static final Block CANTALOUPE_STEM = new StemBlock(CANTALOUPE_BLOCK_KEY, ATTACHED_CANTALOUPE_STEM_KEY, CANTALOUPE_SEEDS_KEY, AbstractBlock.Settings.create().mapColor(MapColor.PALE_GREEN).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
 	// Miscellaneous Blocks
-	public static final Block BURNING_BALE = new HayBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC, MapColor.RED).strength(0.5f).sounds(BlockSoundGroup.GRASS));
+	public static final Block BURNING_BALE = new HayBlock(AbstractBlock.Settings.create().mapColor(MapColor.RED).strength(0.5f).sounds(BlockSoundGroup.GRASS));
 	
 
     public static void init(){

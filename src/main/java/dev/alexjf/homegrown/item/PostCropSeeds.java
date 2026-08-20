@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 public class PostCropSeeds extends Item{
     private Block block;
 
-    public PostCropSeeds(Block block, Settings settings) {
+    public PostCropSeeds(Block block, net.minecraft.item.Item.Settings settings) {
         super(settings);
         this.block = block;
      }

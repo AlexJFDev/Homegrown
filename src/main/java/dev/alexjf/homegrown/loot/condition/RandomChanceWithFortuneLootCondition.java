@@ -1,23 +1,26 @@
 package dev.alexjf.homegrown.loot.condition;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSerializationContext;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.Set;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameter;
 import net.minecraft.loot.context.LootContextParameters;
-import net.minecraft.util.JsonHelper;
-import net.minecraft.util.JsonSerializer;
-import net.minecraft.enchantment.Enchantments;
 
 public class RandomChanceWithFortuneLootCondition
 implements LootCondition {
+    public static final MapCodec<RandomChanceWithFortuneLootCondition> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+            Codec.FLOAT.fieldOf("chance").forGetter(condition -> condition.chance),
+            Codec.FLOAT.fieldOf("fortune_multiplier").forGetter(condition -> condition.fortuneMultiplier)
+    ).apply(instance, RandomChanceWithFortuneLootCondition::new));
+
     final float chance;
     final float fortuneMultiplier;
 
@@ -49,19 +52,4 @@ implements LootCondition {
     public static LootCondition.Builder builder(float chance, float fortuneMultiplier) {
         return () -> new RandomChanceWithFortuneLootCondition(chance, fortuneMultiplier);
     }
-
-    public static class Serializer
-    implements JsonSerializer<RandomChanceWithFortuneLootCondition> {
-        @Override
-        public void toJson(JsonObject jsonObject, RandomChanceWithFortuneLootCondition randomChanceWithFortuneLootCondition, JsonSerializationContext jsonSerializationContext) {
-            jsonObject.addProperty("chance", Float.valueOf(randomChanceWithFortuneLootCondition.chance));
-            jsonObject.addProperty("fortune_multiplier", Float.valueOf(randomChanceWithFortuneLootCondition.fortuneMultiplier));
-        }
-
-        @Override
-        public RandomChanceWithFortuneLootCondition fromJson(JsonObject jsonObject, JsonDeserializationContext jsonDeserializationContext) {
-            return new RandomChanceWithFortuneLootCondition(JsonHelper.getFloat(jsonObject, "chance"), JsonHelper.getFloat(jsonObject, "fortune_multiplier"));
-        }
-    }
 }
-
