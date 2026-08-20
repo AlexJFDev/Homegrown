@@ -4,6 +4,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import dev.alexjf.homegrown.block.enums.PostType;
 import dev.alexjf.homegrown.item.PostCropSeeds;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -18,7 +19,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 
 public class PostBlock extends Block {
-    public PostBlock(net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings fabricBlockSettings) {
+    public PostBlock(AbstractBlock.Settings fabricBlockSettings) {
         super(fabricBlockSettings);
     }
 

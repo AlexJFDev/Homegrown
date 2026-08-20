@@ -21,13 +21,13 @@ public class HomegrownFeatures {
 				BiomeKeys.WINDSWEPT_SAVANNA
 			), 
 			Feature.VEGETAL_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_cantaloupe_sparse")));
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_cantaloupe_sparse")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.includeByKey(
 				BiomeKeys.RIVER
 			), 
 			Feature.VEGETAL_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_cantaloupe")));
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_cantaloupe")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.excludeByKey(
 				BiomeKeys.BEACH,
@@ -45,10 +45,10 @@ public class HomegrownFeatures {
 				BiomeKeys.DEEP_FROZEN_OCEAN
 			),
 			Feature.VEGETAL_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_wild_rice")));
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_wild_rice")));
 		BiomeModifications.addFeature(
 			BiomeSelectors.all(), 
 			Feature.UNDERGROUND_DECORATION,
-			RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "patch_burning_bush")));
+			RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_burning_bush")));
     }
 }

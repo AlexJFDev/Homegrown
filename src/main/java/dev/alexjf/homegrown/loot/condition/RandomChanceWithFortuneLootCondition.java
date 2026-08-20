@@ -5,14 +5,16 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.Set;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.context.LootContext;
-import net.minecraft.loot.context.LootContextParameter;
 import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.context.ContextParameter;
 
 public class RandomChanceWithFortuneLootCondition
 implements LootCondition {
@@ -35,7 +37,7 @@ implements LootCondition {
     }
 
     @Override
-    public Set<LootContextParameter<?>> getRequiredParameters() {
+    public Set<ContextParameter<?>> getAllowedParameters() {
         return ImmutableSet.of(LootContextParameters.TOOL);
     }
 
@@ -44,7 +46,8 @@ implements LootCondition {
         ItemStack itemStack = lootContext.get(LootContextParameters.TOOL);
         int i = 0;
         if (itemStack != null) {
-            i = EnchantmentHelper.getLevel(Enchantments.FORTUNE, itemStack);
+            RegistryEntry<Enchantment> fortune = lootContext.getLookup().getEntryOrThrow(Enchantments.FORTUNE);
+            i = EnchantmentHelper.getLevel(fortune, itemStack);
         }
         return lootContext.getRandom().nextFloat() < this.chance + (float)i * this.fortuneMultiplier;
     }

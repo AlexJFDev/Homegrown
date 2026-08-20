@@ -14,8 +14,8 @@ import net.minecraft.util.Identifier;
 public class HomegrownItemGroups {
     static final String MOD_ID = "homegrown";
 
-	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "items"));
-	public static final RegistryKey<ItemGroup> BLOCK_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "blocks"));
+	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(MOD_ID, "items"));
+	public static final RegistryKey<ItemGroup> BLOCK_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(MOD_ID, "blocks"));
 
 	public static ItemGroup itemGroup;
 

@@ -22,9 +22,9 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.tick.ScheduledTickView;
 
 public class TallCropBlock extends CropBlock {
     public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
@@ -42,8 +42,8 @@ public class TallCropBlock extends CropBlock {
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        world.scheduleBlockTick(pos, this, 1);
+    public BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
+        tickView.scheduleBlockTick(pos, this, 1);
 
         if (!this.canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
         if (state.get(HALF) == DoubleBlockHalf.LOWER) return state;
@@ -115,7 +115,7 @@ public class TallCropBlock extends CropBlock {
 
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!world.isClient) {
+        if (!world.isClient()) {
             if (player.isCreative()) {
                 //TallCropBlock.onBreakInCreative(world, pos, state, player);
             } else {
